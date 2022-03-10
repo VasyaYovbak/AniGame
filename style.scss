@@ -1,0 +1,334 @@
+@import 'variables';
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Fredoka, fantasy;
+}
+
+body {
+  background: url("assets/background.png") no-repeat fixed center 0;
+  background-size: cover;
+
+  nav {
+    background: rgba(255, 255, 255, 0.1);
+    width: 100%;
+    position: fixed;
+
+    .nav-elements {
+      list-style-type: none;
+      display: flex;
+      height: 76px;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      width: 100%;
+
+      .nav-element {
+        font-size: 26px;
+        color: white;
+        min-width: 162px;
+
+        a {
+          text-decoration: none;
+          color: white;
+        }
+      }
+
+      .nav-element:hover {
+        cursor: pointer;
+      }
+
+      .logo {
+        margin: 0 20px 0 10px;
+
+        img {
+          width: 50px;
+        }
+      }
+
+      .login-button {
+        margin-left: auto;
+        color: crimson;
+        font-size: 30px;
+        text-align: right;
+        padding-right: 25px;
+      }
+    }
+  }
+
+  header {
+    height: 100vh;
+
+    .container {
+      width: 60%;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+
+      .header-text {
+        color: #ffe2e2;
+        font-size: 72px;
+        text-align: center;
+        margin-top: 25vh;
+      }
+
+      .btn {
+        padding: 15px 110px;
+        font-size: 20px;
+        border-radius: 15px;
+        color: white;
+        background: linear-gradient(to right, $saske-aura, $red-background, $naruto-aura);
+        box-shadow: 0 0 20px $button-light;
+        text-transform: uppercase;
+        transition: all .4s;
+        cursor: pointer;
+        margin: 180px 0 0 0;
+      }
+
+      .btn:hover {
+        box-shadow: 0 0 40px $button-light;
+      }
+    }
+  }
+
+  section.game-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding-bottom: 100px;
+
+    .card {
+      height: 27vh;
+      width: 21vw;
+      display: flex;
+      justify-content: flex-start;
+      gap: 20px;
+      overflow: hidden;
+      transition: all .6s;
+
+      .card-image {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        img {
+          height: 24vh;
+          width: 20vw;
+          border-radius: 10%;
+          border: 1px solid white;
+        }
+
+        p {
+          font-size: 26px;
+          color: white;
+        }
+      }
+
+      .describe {
+        display: flex;
+        align-items: center;
+
+        .describe-text {
+          font-size: 26px;
+          color: white;
+          width: 30vw;
+        }
+      }
+
+    }
+
+    .card:hover {
+      width: 55vw;
+      cursor: pointer;
+    }
+  }
+
+  section.entry-section {
+    display: flex;
+    justify-content: center;
+
+    .container {
+      margin-top: 20vh;
+      width: 33vw;
+      height: 70vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 40px;
+
+      -webkit-box-shadow: -20px 0px 25px 1px $naruto-aura inset, 20px 0px 25px 1px $saske-aura inset;
+      -moz-box-shadow: -20px 0px 25px 1px $naruto-aura inset, 20px 0px 25px 1px $saske-aura inset;
+      box-shadow: -20px 0px 25px 1px $naruto-aura inset, 20px 0px 25px 1px $saske-aura inset;
+
+
+      background: #ffffff;
+
+      .entry-header-text {
+        font-size: 48px;
+        font-weight: 300;
+        margin-top: 20%;
+      }
+
+      form {
+
+        * {
+          display: block;
+        }
+
+        width: 70%;
+
+        label {
+          font-size: 18px;
+        }
+
+        input {
+          width: 100%;
+          height: 30px;
+          margin-bottom: 15px;
+        }
+
+        .btn {
+          width: fit-content;
+          padding: 12px 40px;
+          border: 1px solid black;
+          border-radius: 5%;
+          margin: 60px 0 20px auto;
+          transition: .4s;
+        }
+
+        .btn:hover {
+          box-shadow: 0 0 30px $button-light;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+@media screen and (min-width: 650px) and (max-width: 900px) {
+  body {
+    nav {
+      .nav-elements {
+        .nav-element {
+          font-size: 18px;
+          min-width: 100px;
+        }
+      }
+    }
+
+    header {
+      .container {
+        .header-text {
+          font-size: 60px;
+          text-align: center;
+        }
+      }
+    }
+
+    section.entry-section {
+      .container {
+        width: 50vw;
+        height: 70vh;
+      }
+    }
+
+    section.game-info {
+      .card {
+        width: 30vw;
+        height: 28vh;
+
+        .card-image {
+          img {
+            width: 28vw;
+          }
+        }
+
+        .describe {
+          .describe-text {
+            width: 45vw;
+
+          }
+        }
+
+      }
+
+      .card:hover {
+        width: 76vw;
+      }
+    }
+  }
+
+}
+
+@media screen and (max-width: 650px) {
+  body {
+    nav {
+      .nav-elements {
+        .nav-element {
+          font-size: 18px;
+          min-width: 70px;
+        }
+      }
+    }
+
+    section.entry-section {
+      .container {
+        width: 70vw;
+        height: 65vh;
+      }
+    }
+
+    header {
+      .container {
+        .header-text {
+          font-size: 48px;
+          text-align: center;
+        }
+      }
+    }
+
+    section.game-info {
+      .card {
+        width: 50vw;
+        height: 28vh;
+
+        .card-image {
+          img {
+            width: 48vw;
+          }
+        }
+
+        .describe {
+          display: none;
+        }
+
+      }
+
+      .card:hover {
+        width: 50vw;
+
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  body {
+    nav {
+      .nav-elements {
+        img {
+          display: none;
+        }
+      }
+    }
+  }
+}
