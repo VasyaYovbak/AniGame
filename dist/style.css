@@ -1,0 +1,256 @@
+/*!*********************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./variables.scss ***!
+  \*********************************************************************************************************/
+
+/*!*****************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./style.scss ***!
+  \*****************************************************************************************************/
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Fredoka, fantasy;
+}
+
+body {
+  background: url(8206e62c7cffec61130d.png) no-repeat fixed center 0;
+  background-size: cover;
+}
+body nav {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.1);
+  width: 100%;
+  position: fixed;
+}
+body nav .nav-elements {
+  list-style-type: none;
+  display: flex;
+  height: 76px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+}
+body nav .nav-elements .nav-element {
+  font-size: 26px;
+  color: white;
+  min-width: 162px;
+}
+body nav .nav-elements .nav-element a {
+  text-decoration: none;
+  color: white;
+}
+body nav .nav-elements .nav-element:hover {
+  cursor: pointer;
+}
+body nav .nav-elements .logo {
+  margin: 0 20px 0 10px;
+}
+body nav .nav-elements .logo img {
+  width: 50px;
+}
+body nav .nav-elements .auth-button {
+  margin-left: auto;
+  color: crimson;
+  font-size: 30px;
+  text-align: right;
+  padding-right: 25px;
+}
+body header {
+  height: 100vh;
+}
+body header .container {
+  width: 60%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+body header .container .header-text {
+  color: #ffe2e2;
+  font-size: 72px;
+  text-align: center;
+  margin-top: 25vh;
+}
+body header .container .btn {
+  padding: 15px 110px;
+  font-size: 20px;
+  border-radius: 15px;
+  color: white;
+  background: linear-gradient(to right, rgba(168, 62, 232, 0.6), #b11b3e, rgba(255, 209, 14, 0.6));
+  box-shadow: 0 0 20px #ff8f00;
+  text-transform: uppercase;
+  transition: all 0.4s;
+  cursor: pointer;
+  margin: 180px 0 0 0;
+}
+body header .container .btn:hover {
+  box-shadow: 0 0 40px #ff8f00;
+}
+body section.game-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  padding-bottom: 100px;
+}
+body section.game-info .card {
+  height: 27vh;
+  width: 21vw;
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+  overflow: hidden;
+  transition: all 0.6s;
+}
+body section.game-info .card .card-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+body section.game-info .card .card-image img {
+  height: 24vh;
+  width: 20vw;
+  border-radius: 10%;
+  border: 1px solid white;
+}
+body section.game-info .card .card-image p {
+  font-size: 26px;
+  color: white;
+}
+body section.game-info .card .describe {
+  display: flex;
+  align-items: center;
+}
+body section.game-info .card .describe .describe-text {
+  font-size: 26px;
+  color: white;
+  width: 30vw;
+}
+body section.game-info .card:hover {
+  width: 55vw;
+  cursor: pointer;
+}
+body section.entry-section {
+  display: flex;
+  justify-content: center;
+}
+body section.entry-section .container {
+  border-radius: 10%;
+  margin-top: 20vh;
+  width: 33vw;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 4vh;
+  -webkit-box-shadow: -20px 0px 25px 1px rgba(255, 209, 14, 0.6) inset, 20px 0px 25px 1px rgba(168, 62, 232, 0.6) inset;
+  -moz-box-shadow: -20px 0px 25px 1px rgba(255, 209, 14, 0.6) inset, 20px 0px 25px 1px rgba(168, 62, 232, 0.6) inset;
+  box-shadow: -20px 0px 25px 1px rgba(255, 209, 14, 0.6) inset, 20px 0px 25px 1px rgba(168, 62, 232, 0.6) inset;
+  background: #ffffff;
+}
+body section.entry-section .container .entry-header-text {
+  font-size: 48px;
+  font-weight: 300;
+  margin-top: 5vh;
+}
+body section.entry-section .container form {
+  width: 70%;
+}
+body section.entry-section .container form * {
+  display: block;
+}
+body section.entry-section .container form label {
+  font-size: 18px;
+}
+body section.entry-section .container form input {
+  width: 100%;
+  height: 3vh;
+  margin-bottom: 15px;
+}
+body section.entry-section .container form .btn {
+  width: fit-content;
+  padding: 1.2vh 40px;
+  border: 1px solid black;
+  border-radius: 5%;
+  margin: 4vh 0 2vh auto;
+  transition: 0.4s;
+}
+body section.entry-section .container form .btn:hover {
+  box-shadow: 0 0 30px #ff8f00;
+  cursor: pointer;
+}
+body section.entry-section .container form p {
+  padding-bottom: 10vh;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+@media screen and (min-width: 650px) and (max-width: 900px) {
+  body nav .nav-elements .nav-element {
+    font-size: 18px;
+    min-width: 100px;
+  }
+  body header .container .header-text {
+    font-size: 60px;
+    text-align: center;
+  }
+  body section.entry-section .container {
+    width: 50vw;
+  }
+  body section.entry-section .container .entry-header-text {
+    font-size: 36px;
+  }
+  body section.game-info .card {
+    width: 30vw;
+    height: 28vh;
+  }
+  body section.game-info .card .card-image img {
+    width: 28vw;
+  }
+  body section.game-info .card .describe .describe-text {
+    width: 45vw;
+  }
+  body section.game-info .card:hover {
+    width: 76vw;
+  }
+}
+@media screen and (max-width: 650px) {
+  body nav .nav-elements .nav-element {
+    font-size: 18px;
+    min-width: 70px;
+  }
+  body section.entry-section .container {
+    width: 70vw;
+  }
+  body section.entry-section .container .entry-header-text {
+    font-size: 36px;
+  }
+  body header .container .header-text {
+    font-size: 48px;
+    text-align: center;
+  }
+  body section.game-info .card {
+    width: 50vw;
+    height: 28vh;
+  }
+  body section.game-info .card .card-image img {
+    width: 48vw;
+  }
+  body section.game-info .card .describe {
+    display: none;
+  }
+  body section.game-info .card:hover {
+    width: 50vw;
+  }
+}
+@media screen and (max-width: 500px) {
+  body nav .nav-elements img {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=style.css.map*/
