@@ -4,7 +4,7 @@
     <meta charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Title</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dist/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600&family=Montserrat:wght@200;300&display=swap"
@@ -28,8 +28,11 @@
         <li class="nav-element">
             Leader Board
         </li>
-        <li class="login-button nav-element">
+        <li class="auth-button nav-element" id="login">
             <a href="login.html">Login</a>
+        </li>
+        <li class="auth-button  nav-element" id="logout">
+            <p>Logout</p>
         </li>
     </ul>
 </nav>
@@ -77,4 +80,5 @@
     </div>
 </section>
 </body>
+<script src="dist/bundle.js"></script>
 </html>
