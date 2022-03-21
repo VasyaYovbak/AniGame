@@ -1,0 +1,9 @@
+<div class="container">
+  <div *ngIf="isSearching">
+    <img src="../../../../assets/naruto-dance.gif" alt="naruto-dance">
+    <p>The search has started</p>
+  </div>
+  <button (click)="startSearch()" *ngIf="!isSearching" class="btn">
+      Find Opponent
+  </button>
+</div>

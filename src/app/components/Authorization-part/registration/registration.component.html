@@ -1,0 +1,38 @@
+<section class="entry-section">
+  <div class="container">
+    <p class="entry-header-text">Registration</p>
+    <form class="registration-form" (ngSubmit)="onSubmit()" [formGroup]="registrationForm">
+      <label for="email">Email</label>
+      <input type="text" name="email" id='email' formControlName="email">
+      <p *ngIf="registrationForm.get('email')?.invalid&&registrationForm.get('email')?.touched"
+         class="validation-error">
+        Wrong email, please use correct email!!!
+      </p>
+      <label for="username">Username</label>
+      <input type="text" name="username" id='username' formControlName="username">
+      <p *ngIf="registrationForm.get('username')?.invalid&&registrationForm.get('username')?.touched"
+         class="validation-error">
+        Username is required!
+      </p>
+      <label for="password">Password</label>
+      <input type="text" name="password" id="password" formControlName="password">
+      <p *ngIf="registrationForm.get('password')?.invalid&&registrationForm.get('password')?.touched"
+         class="validation-error">
+        Wrong password, minimal length is 8 !
+      </p>
+      <label for="password">Confirm password</label>
+      <input type="text" name="confirm-password" id="confirm-password" formControlName="confirmPassword">
+      <p
+        *ngIf="passwordNotEqual || (registrationForm.get('confirmPassword')?.invalid&&registrationForm.get('confirmPassword')?.touched)"
+        class="validation-error">
+        Passwords must be equal!
+      </p>
+      <button class="btn" [disabled]="registrationForm.invalid"
+              [ngStyle]="{background:registrationForm.valid === true ? '#f4dba5': '#f5f2f2'}"
+      >Registration
+      </button>
+
+      <p>If you already registered <a routerLink="/login">Login</a></p>
+    </form>
+  </div>
+</section>

@@ -1,0 +1,51 @@
+.container {
+  display: flex;
+  justify-content: center;
+
+  .game-board {
+    width: max-content;
+    height: max-content;
+    background: white;
+    margin-top: 6vh;
+    display: grid;
+    grid-template:
+      "A A A A A A A B B"
+      "A A A A A A A C C"
+      "A A A A A A A C C"
+      "A A A A A A A C C"
+      "A A A A A A A C C";
+
+    game-cards {
+      grid-area: A;
+    }
+
+    .selected-character {
+      border: 1px solid black;
+      grid-area: B;
+      ::ng-deep{
+        img{
+          width: 150px;
+          height: 150px;
+        }
+      }
+    }
+
+    game-chat {
+      border: 1px solid black;
+      grid-area: C;
+      width: 325px;
+    }
+
+
+  }
+  .results{
+    width: 90%;
+    height: 85vh;
+    background: white;
+    margin-top: 12vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}

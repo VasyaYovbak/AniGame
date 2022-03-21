@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="game-board" *ngIf="!isGameEnd">
+    <game-cards [cards]="cards"></game-cards>
+    <game-card class="selected-character" [character]="selected_character"
+               [ngStyle]="{}"
+    ></game-card>
+    <game-chat></game-chat>
+  </div>
+  <div class="results" *ngIf="isGameEnd">
+    <p>This game is over, the results have not been added)))</p>
+    <p><span>{{winResult.winner}}</span>:win <br><span>{{winResult.loser}}</span>:lose</p>
+  </div>
+</div>

@@ -1,0 +1,73 @@
+@import "../../../../style/variables";
+
+section.entry-section {
+  display: flex;
+  justify-content: center;
+
+  .container {
+    border-radius: 10%;
+    margin-top: 20vh;
+    width: 33vw;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 4vh;
+
+    -webkit-box-shadow: -20px 0px 25px 1px $naruto-aura inset, 20px 0px 25px 1px $saske-aura inset;
+    -moz-box-shadow: -20px 0px 25px 1px $naruto-aura inset, 20px 0px 25px 1px $saske-aura inset;
+    box-shadow: -20px 0px 25px 1px $naruto-aura inset, 20px 0px 25px 1px $saske-aura inset;
+
+
+    background: #ffffff;
+
+    .entry-header-text {
+      font-size: 48px;
+      font-weight: 300;
+      margin-top: 5vh;
+    }
+
+    form {
+
+      * {
+        display: block;
+      }
+
+      width: 70%;
+
+      label {
+        font-size: 18px;
+      }
+
+      input {
+        width: 100%;
+        height: 3vh;
+        margin-bottom: 15px;
+      }
+
+      .btn {
+        width: fit-content;
+        padding: 1.2vh 18%;
+        border: 0 ;
+        color: black;
+        border-radius: 5%;
+        margin: 4vh 0 2vh auto;
+        transition: .4s;
+      }
+
+      .btn:hover {
+        box-shadow: 0 0 30px $button-light;
+        cursor: pointer;
+      }
+
+      p {
+        padding-bottom: 10vh;
+      }
+      .validation-error{
+        color: red;
+        padding: 1px;
+      }
+    }
+  }
+}
