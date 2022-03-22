@@ -11,17 +11,29 @@ export class WaitingRoomComponent implements OnInit {
 
   isSearching = false;
 
-  constructor(private gameService: GameService,private router:Router) {
+  constructor(private gameService: GameService, private router: Router) {
   }
 
   ngOnInit(): void {
-
+    this.gameService.checkSearchStatus().subscribe((data) => {
+      console.log(data);
+      this.isSearching = <boolean>data;
+    })
   }
 
   startSearch() {
     this.isSearching = true;
-    this.gameService.searchOpponent().subscribe((data)=>{
+    this.gameService.searchOpponent().subscribe((data) => {
+      if (this.isSearching) {
         this.router.navigate([`/game/${data}`])
+      }
     });
+  }
+
+  stopSearch() {
+    this.gameService.stopSearch().subscribe((data) => {
+      console.log(data);
+      this.isSearching = false;
+    })
   }
 }

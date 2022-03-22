@@ -12,13 +12,8 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {AuthorizationService} from "./services/authorization.service";
 import {JwtInterceptor} from "./services/jwt.interceptor";
-import {GameRoomComponent} from './components/game-part/game-room/game-room.component';
-import {CardsComponent} from './components/game-part/game-room/game-room-components/cards/cards.component';
-import {CardComponent} from './components/game-part/game-room/game-room-components/card/card.component';
-import {ChatComponent} from './components/game-part/game-room/game-room-components/chat/chat.component';
-import {WaitingRoomComponent} from './components/game-part/waiting-room/waiting-room.component';
-import {GameService} from "./services/game.service";
 import {GameModule} from "./components/game-part/game.module";
+import {AuthGuard} from "./services/guards/auth.guard";
 
 @NgModule({
   declarations: [
@@ -35,7 +30,7 @@ import {GameModule} from "./components/game-part/game.module";
     HttpClientModule,
     GameModule
   ],
-  providers: [CookieService, AuthorizationService,
+  providers: [CookieService, AuthorizationService,AuthGuard,
     {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true}],
   bootstrap: [AppComponent]
 })

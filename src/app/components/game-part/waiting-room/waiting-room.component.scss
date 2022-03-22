@@ -8,7 +8,10 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-
+  .searching{
+    display: flex;
+    flex-direction: column;
+  }
   p{
     font-size: 22px;
     color: white;
