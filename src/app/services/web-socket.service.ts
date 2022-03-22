@@ -6,9 +6,8 @@ import {Observable} from "rxjs";
   providedIn: 'root'
 })
 export class WebSocketService {
-
   socket: any;
-  url: string = 'wss://ani-game.herokuapp.com';
+  url: string = 'wss://ani-game-backend.herokuapp.com';
 
   constructor() {
     this.socket = io.connect(this.url)

@@ -12,7 +12,7 @@ interface User {
 })
 export class AuthorizationService {
 
-  backendUrl = 'https://ani-game.herokuapp.com'
+  backendUrl = 'https://ani-game-backend.herokuapp.com'
 
   constructor(private http: HttpClient) {
   }

@@ -10,7 +10,7 @@ import {CookieService} from "./cookie.service";
 })
 export class GameService {
 
-  backendUrl = 'https://ani-game.herokuapp.com'
+  backendUrl = 'https://ani-game-backend.herokuapp.com'
   // backendUrl = "http://127.0.0.1:2012"
 
   constructor(private http: HttpClient,
