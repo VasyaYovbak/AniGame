@@ -1,7 +1,8 @@
 import {Injectable} from '@angular/core';
 import {CookieService} from "./cookie.service";
+import {HttpClient} from "@angular/common/http";
 
-interface User {
+export interface User {
   id: number,
   username: string,
   email: string,
@@ -15,15 +16,18 @@ interface User {
 })
 export class UserService {
 
+  backendUrl = 'https://ani-game-backend.herokuapp.com'
 
-
-  constructor(private cookie:CookieService) {
+  constructor(private cookie:CookieService, private http:HttpClient) {
 
   }
   getSelfUser(){
     return JSON.parse(<string>this.cookie.getCookie('self'));
   }
-  getUser(user_id:number){
+  getProfile(user_id:number){
 
+  }
+  getLeaderList(){
+     return this.http.get<Array<User>>(this.backendUrl+'/leaderboard');
   }
 }

@@ -1,12 +1,12 @@
-import {AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {WebSocketService} from "../../../services/web-socket.service";
-import {interval} from "rxjs";
+
 import {CookieService} from "../../../services/cookie.service";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {GameService} from "../../../services/game.service";
 import {Card} from "./game-room-components/cards/cards.component";
 import {Character} from "./game-room-components/card/card.component";
-import {UserService} from "../../../services/user.service";
+
 
 @Component({
   selector: 'app-game-room',
@@ -30,7 +30,7 @@ export class GameRoomComponent implements OnInit {
               private cookie: CookieService,
               private route: ActivatedRoute,
               private gameService: GameService,
-              private userService: UserService
+              private router: Router
   ) {
   }
 
@@ -54,10 +54,13 @@ export class GameRoomComponent implements OnInit {
         cards: Array<Card>,
         selected_character: Card
       }>(params['id']).subscribe((data) => {
-        this.cards = data?.cards;
-        this.selected_character = data?.selected_character.character;
-        console.log(this.selected_character)
-      });
+          this.cards = data?.cards;
+          this.selected_character = data?.selected_character.character;
+          console.log(this.selected_character)
+        },
+        (error) => {
+          this.router.navigate(['/home']);
+        });
       this.webSocketService.emit('connectToChat', {
         "access_token": this.cookie.getAuthToken(),
         "data": {

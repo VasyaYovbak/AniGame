@@ -14,6 +14,8 @@ import {AuthorizationService} from "./services/authorization.service";
 import {JwtInterceptor} from "./services/jwt.interceptor";
 import {GameModule} from "./components/game-part/game.module";
 import {AuthGuard} from "./services/guards/auth.guard";
+import { ProfileComponent } from './components/profile/profile.component';
+import { LeaderboardComponent } from './components/leaderboard/leaderboard.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import {AuthGuard} from "./services/guards/auth.guard";
     NavigationComponent,
     LoginComponent,
     RegistrationComponent,
-    HomeComponent
+    HomeComponent,
+    ProfileComponent,
+    LeaderboardComponent
   ],
   imports: [
     BrowserModule,
