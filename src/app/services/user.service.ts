@@ -10,6 +10,19 @@ export interface User {
   image: string
 }
 
+export interface Profile {
+  user_info: {
+    email: string,
+    username: string,
+    image: string
+  },
+  games: Array<{
+    date: string,
+    game_id: number,
+    winner: string,
+    loser: string
+  }>
+}
 
 @Injectable({
   providedIn: 'root'
@@ -18,16 +31,19 @@ export class UserService {
 
   backendUrl = 'https://ani-game-backend.herokuapp.com'
 
-  constructor(private cookie:CookieService, private http:HttpClient) {
+  constructor(private cookie: CookieService, private http: HttpClient) {
 
   }
-  getSelfUser(){
+
+  getSelfUser() {
     return JSON.parse(<string>this.cookie.getCookie('self'));
   }
-  getProfile(user_id:number){
 
+  getProfile(user_id: number) {
+    return this.http.get<Profile>(this.backendUrl + `/profile/${user_id}`);
   }
-  getLeaderList(){
-     return this.http.get<Array<User>>(this.backendUrl+'/leaderboard');
+
+  getLeaderList() {
+    return this.http.get<Array<User>>(this.backendUrl + '/leaderboard');
   }
 }

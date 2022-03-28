@@ -8,7 +8,7 @@ import {LoginComponent} from './components/Authorization-part/login/login.compon
 import {RegistrationComponent} from './components/Authorization-part/registration/registration.component';
 import {HomeComponent} from './components/home/home.component';
 import {CookieService} from "./services/cookie.service";
-import {ReactiveFormsModule} from "@angular/forms";
+import {ReactiveFormsModule,FormsModule } from "@angular/forms";
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {AuthorizationService} from "./services/authorization.service";
 import {JwtInterceptor} from "./services/jwt.interceptor";
@@ -16,6 +16,7 @@ import {GameModule} from "./components/game-part/game.module";
 import {AuthGuard} from "./services/guards/auth.guard";
 import { ProfileComponent } from './components/profile/profile.component';
 import { LeaderboardComponent } from './components/leaderboard/leaderboard.component';
+import { TableComponent } from './components/shared/table/table.component';
 
 @NgModule({
   declarations: [
@@ -25,12 +26,14 @@ import { LeaderboardComponent } from './components/leaderboard/leaderboard.compo
     RegistrationComponent,
     HomeComponent,
     ProfileComponent,
-    LeaderboardComponent
+    LeaderboardComponent,
+    TableComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    FormsModule,
     HttpClientModule,
     GameModule
   ],

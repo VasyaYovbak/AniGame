@@ -8,14 +8,14 @@ import {User, UserService} from "../../services/user.service";
 })
 export class LeaderboardComponent implements OnInit {
 
-  user_list: Array<User> = [];
+  data: Array<User> = [];
 
   constructor(private userService: UserService) {
   }
 
   ngOnInit(): void {
     this.userService.getLeaderList().subscribe((data) => {
-      this.user_list = data;
+      this.data = data;
     })
   }
 

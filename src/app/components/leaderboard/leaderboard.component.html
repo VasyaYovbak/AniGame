@@ -1,27 +1,5 @@
 <div class="container">
-  <table>
-    <tr>
-      <th>
-        Id
-      </th>
-      <th>
-        nickname
-      </th>
-      <th>
-        rating
-      </th>
-    </tr>
-    <tr *ngFor="let user of user_list">
-      <td>
-        {{user.id}}
-      </td>
-      <td>
-        {{user.username}}
-      </td>
-      <td>
-        {{user.rating}}
-      </td>
-    </tr>
+  <app-table *ngIf="data" [columns]="['id','username','rating']" [data]= "data" >
 
-  </table>
+  </app-table>
 </div>

@@ -1,8 +1,9 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, DoCheck, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {CookieService} from "../../services/cookie.service";
 import {AuthorizationService} from "../../services/authorization.service";
 import {ActivatedRoute, NavigationEnd, Router} from "@angular/router";
-import {filter} from "rxjs";
+import {filter, interval} from "rxjs";
+import {UserService} from "../../services/user.service";
 
 @Component({
   selector: 'app-navigation',
@@ -11,13 +12,20 @@ import {filter} from "rxjs";
 })
 export class NavigationComponent implements OnInit {
 
-  constructor(private cookie: CookieService, private auth: AuthorizationService, private router: Router) {
-  }
+  userId: number;
 
+  constructor(private cookie: CookieService, private auth: AuthorizationService, private userService: UserService) {
+  }
 
   ngOnInit(): void {
-
+    const subscription = interval(1000).subscribe(() => {
+      if (this.userService.getSelfUser()) {
+        this.userId = this.userService.getSelfUser().id;
+        subscription.unsubscribe();
+      }
+    })
   }
+
 
   isLoggedIn() {
     return !(this.cookie.getAuthToken() === null);
@@ -29,4 +37,5 @@ export class NavigationComponent implements OnInit {
       this.cookie.clearCookie('self');
     })
   }
+
 }
