@@ -15,13 +15,13 @@
         Username is required!
       </p>
       <label for="password">Password</label>
-      <input type="text" name="password" id="password" formControlName="password">
+      <input type="password" name="password" id="password" formControlName="password">
       <p *ngIf="registrationForm.get('password')?.invalid&&registrationForm.get('password')?.touched"
          class="validation-error">
         Wrong password, minimal length is 8 !
       </p>
       <label for="password">Confirm password</label>
-      <input type="text" name="confirm-password" id="confirm-password" formControlName="confirmPassword">
+      <input type="password" name="confirm-password" id="confirm-password" formControlName="confirmPassword">
       <p
         *ngIf="passwordNotEqual || (registrationForm.get('confirmPassword')?.invalid&&registrationForm.get('confirmPassword')?.touched)"
         class="validation-error">

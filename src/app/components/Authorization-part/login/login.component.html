@@ -9,7 +9,7 @@
         Wrong email, please use correct email!!!
       </p>
       <label for="password">Password</label>
-      <input type="text" name="password" id="password" formControlName="password">
+      <input type="password" name="password" id="password" formControlName="password">
       <p *ngIf="loginForm.get('password')?.invalid&&loginForm.get('password')?.touched" class="validation-error">
         Wrong password, minimal length is 8 !
       </p>
