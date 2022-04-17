@@ -35,7 +35,6 @@ export class ChatComponent implements OnInit , AfterViewChecked {
 
   ngOnInit(): void {
     this.gameService.enterChat<{ username: string, text: string }>().subscribe((data) => {
-      console.log(data);
       let massage = {
         isMy: false,
         text: data.text,
