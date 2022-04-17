@@ -1,0 +1,50 @@
+nav{
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.1);
+  width: 100%;
+  position: sticky;
+
+  .nav-elements {
+    list-style-type: none;
+    display: flex;
+    height: 76px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+
+    .nav-element {
+      font-size: 26px;
+      color: white;
+      min-width: 162px;
+
+      a {
+        text-decoration: none;
+        color: white;
+      }
+    }
+    .not-working{
+      color: gray;
+    }
+
+    .nav-element:hover {
+      cursor: pointer;
+    }
+
+    .logo {
+      margin: 0 20px 0 10px;
+
+      img {
+        width: 50px;
+      }
+    }
+
+    .auth-button {
+      margin-left: auto;
+      color: crimson;
+      font-size: 30px;
+      text-align: right;
+      padding-right: 25px;
+    }
+  }
+}

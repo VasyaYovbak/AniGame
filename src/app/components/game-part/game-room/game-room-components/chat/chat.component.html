@@ -1,0 +1,10 @@
+<div class="chat" #chat>
+  <p *ngFor="let massage of all_massage"
+     [ngClass]="{'my-massage':massage.isMy}"
+  >
+    <span>{{massage.username}}</span>:<br> {{massage.text}}
+  </p>
+</div>
+<input type="text" #field [value]="input" (input)="input=field.value"
+       (keydown.enter)="sendMessage()"
+>

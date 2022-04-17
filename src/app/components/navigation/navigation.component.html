@@ -1,0 +1,22 @@
+<nav>
+  <ul class="nav-elements">
+    <li class="logo">
+      <img src="assets/logo.png" alt="Here might be logo">
+    </li>
+    <li class="nav-element">
+      <a routerLink="/home">Home</a>
+    </li>
+    <li class="nav-element" routerLink="/profile/{{userId}}">
+      MyProfile
+    </li>
+    <li class="nav-element" routerLink ="/leaderboard">
+      Leaderboard
+    </li>
+    <li class="auth-button nav-element" id="login" *ngIf="!isLoggedIn()">
+      <a routerLink="/login">Login</a>
+    </li>
+    <li class="auth-button  nav-element" id="logout" *ngIf="isLoggedIn()" (click)="logout()">
+      <p>Logout</p>
+    </li>
+  </ul>
+</nav>

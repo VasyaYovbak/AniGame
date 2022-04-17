@@ -1,0 +1,24 @@
+<section class="entry-section">
+  <div class="container">
+    <p class="entry-header-text">Login</p>
+    <form class="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+      <label for="email">Email</label>
+      <input type="text" name="email" id="email" formControlName="email">
+      <p *ngIf="loginForm.get('email')?.invalid&&loginForm.get('email')?.touched" class="validation-error">
+        Wrong email, please use correct email!!!
+      </p>
+      <label for="password">Password</label>
+      <input type="password" name="password" id="password" formControlName="password">
+      <p *ngIf="loginForm.get('password')?.invalid&&loginForm.get('password')?.touched" class="validation-error">
+        Wrong password, minimal length is 8 !
+      </p>
+      <button class="btn" [disabled]="loginForm.invalid"
+              [ngStyle]="{background:loginForm.valid === true ? '#f4dba5': '#f5f2f2'}"
+      >Login
+      </button>
+
+      <p>If you don't have account <a routerLink="/registration">Registration</a></p>
+    </form>
+  </div>
+</section>

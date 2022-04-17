@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+  a {
+    color: white;
+    text-decoration: none;
+
+    &:hover {
+      color: white;
+    }
+  }
+  app-table::ng-deep{
+    margin-top: 5vh;
+    table{
+      width: 50vw;
+    }
+  }
+
+
+}
