@@ -26,7 +26,6 @@ export class NavigationComponent implements OnInit {
     })
   }
 
-
   isLoggedIn() {
     return !(this.cookie.getAuthToken() === null);
   }

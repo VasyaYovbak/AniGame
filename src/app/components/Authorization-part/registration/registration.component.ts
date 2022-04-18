@@ -23,6 +23,7 @@ export class RegistrationComponent implements OnInit {
   ngOnInit(): void {
   }
   onSubmit() {
+
     let data = this.registrationForm.value;
     if(data['password']!==data['confirmPassword']){
         this.passwordNotEqual = true;
@@ -30,6 +31,7 @@ export class RegistrationComponent implements OnInit {
         return
     }
     delete data['confirmPassword'];
+    console.log(data);
     this.auth.registration(data).subscribe((data) => {
         this.cookie.setCookie('access_token', data['access_token'], 60);
          this.cookie.setCookie('self', JSON.stringify(data['user']), 60);
