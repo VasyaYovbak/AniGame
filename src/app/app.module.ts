@@ -17,6 +17,8 @@ import {AuthGuard} from "./services/guards/auth.guard";
 import { ProfileComponent } from './components/profile/profile.component';
 import { LeaderboardComponent } from './components/leaderboard/leaderboard.component';
 import { TableComponent } from './components/shared/table/table.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatIconModule} from "@angular/material/icon";
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { TableComponent } from './components/shared/table/table.component';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-    GameModule
+    GameModule,
+    BrowserAnimationsModule,
+    MatIconModule
   ],
   providers: [CookieService, AuthorizationService,AuthGuard,
     {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true}],
