@@ -6,9 +6,15 @@
 }
 body{
    background: url("../assets/background.png") no-repeat fixed center 0;
+  //background: url("../assets/background2.png") no-repeat fixed center 0;
+  //background: url("../assets/one-piece-background1.jpg") no-repeat fixed center 0;
+  //background: url("../assets/vagabond1.jpg") no-repeat fixed center 0;
    background-size: cover;
  }
 
 ::-webkit-scrollbar {
   display: none;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
