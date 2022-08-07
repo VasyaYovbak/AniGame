@@ -1,0 +1,11 @@
+<div class="circle">
+  <div class="wrapper" *ngFor="let state of states,  index as index">
+    <div class="elem"
+         [ngStyle]="getElementStyles(index)"
+         [style.--background]="getBackground(index)"
+         [style.--pictureTransform]="getPictureTransform(index)"
+         (click)="onStateChange(state)"
+    >
+    </div>
+  </div>
+</div>
