@@ -1,4 +1,5 @@
 @import "../../../style/variables.scss";
+@import "../../../style/mixins.scss";
 
 header {
   height: 100vh;
@@ -17,14 +18,11 @@ header {
       flex-direction: column;
       gap: 8vh;
     }
-
     .header-text {
-      color: #ffe2e2;
+      @include stroked-text(var(--home-header-text-color),
+        var(--home-header-text-stroke-width),
+        var(--home-header-text-stroke-color));
 
-      //// for Bleach
-      //color: #ffffff;
-      //-webkit-text-stroke-width: 1px;
-      //-webkit-text-stroke-color: black;
       font-size: 72px;
       @media only screen and (max-width: 320px) {
         font-size: 20px;
@@ -51,35 +49,30 @@ header {
       padding: 15px 110px;
       font-size: 20px;
       border-radius: 15px;
-      color: white;
-      opacity: 0.7;
-      //background: $red-background; // As one of cases
-      background: linear-gradient(to right, $saske-aura, $red-background, $naruto-aura);
+      color: var(--home-button-text-color);
+      opacity: var(--home-button-opacity);
+      background: var(--home-button-background);
       text-transform: uppercase;
       transition: all .4s;
       cursor: pointer;
       margin: 180px 0 0 0;
+
       @media only screen and (max-width: 320px) {
         margin: 100px 0 0 0;
         font-size: 10px;
         padding: 10px 40px;
-        background: $red-background;
       }
 
       @media only screen and (min-width: 320px) and (max-width: 600px) {
         margin: 110px 0 0 0;
         font-size: 14px;
         padding: 9px 60px;
-        background: $red-background;
-        box-shadow: none;
       }
 
       @media only screen and (min-width: 600px) and (max-width: 768px) {
         margin: 130px 0 0 0;
         font-size: 16px;
         padding: 14px 85px;
-        background: $red-background;
-        box-shadow: none;
       }
 
       @media only screen and (min-width: 768px) and (max-width: 900px) {
@@ -94,8 +87,7 @@ header {
     }
 
     .btn:hover {
-      //background-color: $red-background; // As one of cases
-      opacity: 1;
+      opacity: var(--home-button-hover-opacity);
       box-shadow: none;
     }
   }
@@ -133,16 +125,19 @@ section.game-info {
       align-items: center;
       justify-content: center;
 
-      img {
-        height: 24vh;
+      .img {
+        height: 22vh;
         width: 20vw;
-        border-radius: 10%;
-        border: 1px solid white;
       }
 
       p {
         font-size: 26px;
-        color: white;
+        font-family: var(--home-card-image-texts-font-family);
+
+        @include stroked-text(var(--home-card-image-text-color),
+          var(--home-card-image-text-stroke-width),
+          var(--home-card-image-text-stroke-color));
+
         text-align: center;
         @media only screen and (max-width: 600px) {
           font-size: 14px;
@@ -158,8 +153,13 @@ section.game-info {
       align-items: center;
 
       .describe-text {
+        font-family: var(--home-card-image-texts-font-family);
         font-size: 26px;
-        color: white;
+
+        @include stroked-text(var(--home-card-image-describe-text-color),
+          var(--home-card-image-describe-text-stroke-width),
+          var(--home-card-image-describe-text-stroke-color));
+
         width: 30vw;
         @media only screen and (max-width: 600px) {
           font-size: 13px;

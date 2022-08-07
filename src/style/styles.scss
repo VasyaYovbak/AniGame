@@ -1,20 +1,28 @@
-/* You can add global styles to this file, and also import other style files */
 * {
   margin: 0;
   padding: 0;
   font-family: Fredoka, fantasy;
 }
-body{
-   background: url("../assets/background.png") no-repeat fixed center 0;
-  //background: url("../assets/background2.png") no-repeat fixed center 0;
-  //background: url("../assets/one-piece-background1.jpg") no-repeat fixed center 0;
-  //background: url("../assets/vagabond1.jpg") no-repeat fixed center 0;
-   background-size: cover;
- }
+
+.home-svg {
+
+}
+
+.home-svg-cards {
+  stroke: #ffffff;
+  stroke-width: 5px;
+  rx: 10%; // do not remove this line it is for svg border-radius
+}
 
 ::-webkit-scrollbar {
   display: none;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

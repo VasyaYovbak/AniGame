@@ -16,7 +16,7 @@
 <section class="game-info">
   <div class="card">
     <div class="card-image">
-      <img src="assets/fight-scene.png" alt="fight">
+      <mat-icon [svgIcon]="this.fightIcon" class="img"></mat-icon>
       <p>Fight with others</p>
     </div>
     <div class="describe">
@@ -28,7 +28,7 @@
   </div>
   <div class="card">
     <div class="card-image">
-      <img src="assets/achievement.png" alt="achievement">
+      <mat-icon [svgIcon]="this.achievementIcon" class="img"></mat-icon>
       <p>Achieve the achievements</p>
     </div>
     <div class="describe">
@@ -39,9 +39,8 @@
   </div>
   <div class="card">
     <div class="card-image">
-      <img src="assets/learn.png" alt="learn">
-      <!--      <p>Learn new lores</p>-->
-      <p>Learn anime lore</p>
+      <mat-icon [svgIcon]="this.loreIcon" class="img"></mat-icon>
+      <p>Learn anime lore</p> <!--      or &lt;!&ndash;      <p>Learn new lores</p>&ndash;&gt;-->
     </div>
     <div class="describe">
       <p class="describe-text">
