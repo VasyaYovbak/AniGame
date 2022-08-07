@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, ElementRef, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private el: ElementRef) {
+  }
 
   ngOnInit(): void {
   }
 
+  ngAfterViewInit() {
+    this.el.nativeElement.ownerDocument
+      .body.style.background = 'var(--primary-image)';
+    this.el.nativeElement.ownerDocument.body.style.backgroundSize = 'cover';
+  }
 }
