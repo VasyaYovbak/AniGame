@@ -1,0 +1,43 @@
+$base: #A5E2F3;
+
+.circle {
+  width: 400px;
+  height: 400px;
+  clip-path: circle(50% at 50% 50%);
+  overflow: visible;
+  position: relative;
+  pointer-events: none;
+}
+
+.wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.elem {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(50% 50%, 100% 50%, 100% 0, 67% 0%);
+  pointer-events: auto;
+}
+
+.elem:before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  z-index: -1;
+  background: var(--background);
+  transform: var(--pictureTransform);
+}
+
+.elem:hover:before{
+  filter: blur(4px);
+  cursor: pointer;
+}
