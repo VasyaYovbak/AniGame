@@ -12,12 +12,36 @@ export class AppComponent {
   title = 'AniGame';
 
   constructor(private matIconRegistry: MatIconRegistry, private domSanitizer: DomSanitizer, private themeService: ThemeService) {
-    let customIcons: Array<{ name: string, url: string }> = [{
-      name: 'ani-game-logo',
-      url: '../assets/ani-game-logo.svg'
-    },
-      {name: 'fight-scene', url: '../assets/fight-scene.svg'}, {name: 'learn', url: '../assets/learn.svg'},
-      {name: 'achievement', url: '../assets/achievement.svg'}]
+    let narutoThemeIcons = [{name: 'naruto-fight-scene', url: 'assets/themes/naruto/icons/fight-scene.svg'},
+      {name: 'naruto-lore', url: 'assets/themes/naruto/icons/lore.svg'},
+      {name: 'naruto-achievement', url: 'assets/themes/naruto/icons/achievement.svg'}]
+
+    let bleachThemeIcons = [{name: 'bleach-fight-scene', url: 'assets/themes/bleach/icons/fight-scene.svg'},
+      {name: 'bleach-achievement', url: 'assets/themes/bleach/icons/achievement.svg'},
+      {name: 'bleach-lore', url: 'assets/themes/bleach/icons/lore.svg'}]
+
+    let onePieceThemeIcons = [{name: 'one-piece-fight-scene', url: 'assets/themes/one-piece/icons/fight-scene.svg'},
+      {name: 'one-piece-achievement', url: 'assets/themes/one-piece/icons/achievement.svg'},
+      {name: 'one-piece-lore', url: 'assets/themes/one-piece/icons/lore.svg'}
+    ]
+
+    let vagabondThemeIcons = [{name: 'vagabond-fight-scene', url: 'assets/themes/vagabond/icons/fight-scene.svg'},
+      {name: 'vagabond-achievement', url: 'assets/themes/vagabond/icons/achievement.svg'},
+      {name: 'vagabond-lore', url: 'assets/themes/vagabond/icons/lore.svg'}];
+
+    let FateStayNightIcons = [{name: 'fate-stay-night-fight-scene', url: 'assets/themes/fate-stay-night/icons/fight-scene.svg'},
+      {name: 'fate-stay-night-achievement', url: 'assets/themes/fate-stay-night/icons/achievement.svg'},
+      {name: 'fate-stay-night-lore', url: 'assets/themes/fate-stay-night/icons/lore.svg'}]
+
+    let CommonIcons = [{name: 'ani-game-logo', url: 'assets/ani-game-logo.svg'}]
+
+    let customIcons: Array<{ name: string, url: string }> =
+      [...CommonIcons,
+        ...narutoThemeIcons,
+        ...bleachThemeIcons,
+        ...onePieceThemeIcons,
+        ...vagabondThemeIcons,
+        ...FateStayNightIcons];
 
     for (let i = 0; i < customIcons.length; i++) {
       let currentIcon = customIcons[i];
@@ -26,10 +50,10 @@ export class AppComponent {
   }
 
   ngOnInit(): void {
-    this.themeService.setNarutoTheme(); // done
-    // this.themeService.setOnePieceTheme(); // Set card photos
-    // this.themeService.setBleachTheme(); // Set card photos
-    // this.themeService.setVagabondTheme(); // Set card photos
-    // this.themeService.setFateStayNightTheme(); // Set card photos
+    // this.themeService.setNarutoTheme(); // done
+    // this.themeService.setOnePieceTheme(); // done
+    // this.themeService.setBleachTheme(); // done
+    this.themeService.setVagabondTheme(); // done
+    // this.themeService.setFateStayNightTheme(); // done
   }
 }

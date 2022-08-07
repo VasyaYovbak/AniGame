@@ -6,14 +6,18 @@ import {
   OnePieceTheme,
   Theme,
   VagabondTheme
-} from "../../assets/interfaces/ThemeInterface";
+} from "../../assets/type-script/interfaces/ThemeInterface";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ThemeService {
-  private active: Theme;
+  private _active: Theme;
   // private availableThemes: Theme[] = [NarutoTheme, OnePieceTheme];
+
+  get active(){
+    return this._active;
+  }
 
   constructor() { }
 
@@ -38,12 +42,12 @@ export class ThemeService {
   }
 
   setActiveTheme(theme: Theme): void {
-    this.active = theme;
+    this._active = theme;
 
-    Object.keys(this.active.properties).forEach(property => {
+    Object.keys(this._active.properties).forEach(property => {
       document.documentElement.style.setProperty(
         property,
-        this.active.properties[property]
+        this._active.properties[property]
       );
     });
   }
