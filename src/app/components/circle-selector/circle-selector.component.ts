@@ -48,7 +48,7 @@ export class CircleSelectorComponent implements OnInit {
   }
 
   getBackground(index: number) {
-    return `url(${this.states[index].data.img}) ${this.states[index].data.imagePositionX || 0}px ${this.states[index].data.imagePositionY || 0}px / ${this.states[index].data.backgroundSize || 100}%`
+    return `url("${this.states[index].data.img}") ${this.states[index].data.imagePositionX || 0}% ${this.states[index].data.imagePositionY || 0}% / ${this.states[index].data.backgroundSize || 100}%`
   }
 
   getPictureTransform(index: number) {

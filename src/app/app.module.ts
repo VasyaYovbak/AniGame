@@ -20,6 +20,8 @@ import {TableComponent} from './components/shared/table/table.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatIconModule} from "@angular/material/icon";
 import {CircleSelectorModule} from "./components/circle-selector/circle-selector.module";
+import {MatButtonModule} from "@angular/material/button";
+import {MatMenuModule} from "@angular/material/menu";
 
 @NgModule({
   declarations: [
@@ -41,7 +43,9 @@ import {CircleSelectorModule} from "./components/circle-selector/circle-selector
     GameModule,
     BrowserAnimationsModule,
     MatIconModule,
-    CircleSelectorModule
+    MatButtonModule,
+    CircleSelectorModule,
+    MatMenuModule
   ],
   providers: [CookieService, AuthorizationService, AuthGuard,
     {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true}],

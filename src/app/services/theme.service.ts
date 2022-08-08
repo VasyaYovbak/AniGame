@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {
   BleachTheme,
   FateStayNightTheme,
@@ -13,13 +13,18 @@ import {
 })
 export class ThemeService {
   private _active: Theme;
-  // private availableThemes: Theme[] = [NarutoTheme, OnePieceTheme];
+  private _availableThemes: Theme[] = [NarutoTheme, OnePieceTheme, FateStayNightTheme, BleachTheme, VagabondTheme];
 
-  get active(){
+  get active() {
     return this._active;
   }
 
-  constructor() { }
+  get availableThemes(){
+    return this._availableThemes;
+  }
+
+  constructor() {
+  }
 
   setNarutoTheme() {
     this.setActiveTheme(NarutoTheme);

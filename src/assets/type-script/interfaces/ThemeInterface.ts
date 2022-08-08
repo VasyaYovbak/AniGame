@@ -62,6 +62,8 @@ export const BleachTheme: Theme = {
     "--home-card-image-describe-text-color": "#ffffff",
     "--home-card-image-describe-text-stroke-width": "1px",
     "--home-card-image-describe-text-stroke-color": "#3A3331",
+
+    "--navigation-text-color": "#ffffff",
   }
 };
 
@@ -93,6 +95,8 @@ export const OnePieceTheme: Theme = {
     "--home-card-image-describe-text-color": "#F0E8D3",
     "--home-card-image-describe-text-stroke-width": "0.5px",
     "--home-card-image-describe-text-stroke-color": "#3A3331",
+
+    "--navigation-text-color": "#ffffff",
   }
 };
 
@@ -124,6 +128,8 @@ export const VagabondTheme: Theme = {
     "--home-card-image-describe-text-color": "#000000",
     "--home-card-image-describe-text-stroke-width": "0.2px",
     "--home-card-image-describe-text-stroke-color": "#ffffff",
+
+    "--navigation-text-color": "#ffffff",
   }
 };
 
@@ -154,6 +160,8 @@ export const FateStayNightTheme: Theme = {
     "--home-card-image-describe-text-color": "#dfe0ba",
     "--home-card-image-describe-text-stroke-width": "0.5px",
     "--home-card-image-describe-text-stroke-color": "#000000",
+
+    "--navigation-text-color": "#ffffff",
   }
 };
 
