@@ -12,6 +12,9 @@ import {
   providedIn: 'root'
 })
 export class ThemeService {
+  set active(value: Theme) {
+    this._active = value;
+  }
   private _active: Theme;
   private _availableThemes: Theme[] = [NarutoTheme, OnePieceTheme, FateStayNightTheme, BleachTheme, VagabondTheme];
 

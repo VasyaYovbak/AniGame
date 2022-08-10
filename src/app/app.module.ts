@@ -22,6 +22,7 @@ import {MatIconModule} from "@angular/material/icon";
 import {CircleSelectorModule} from "./components/circle-selector/circle-selector.module";
 import {MatButtonModule} from "@angular/material/button";
 import {MatMenuModule} from "@angular/material/menu";
+import { ClientValidationComponent } from './components/client-validation/client-validation.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import {MatMenuModule} from "@angular/material/menu";
     ProfileComponent,
     LeaderboardComponent,
     TableComponent,
+    ClientValidationComponent,
   ],
   imports: [
     BrowserModule,

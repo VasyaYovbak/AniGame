@@ -4,33 +4,61 @@ section.entry-section {
   display: flex;
   justify-content: center;
 
+  @media only screen and (min-width: 320px) and (max-width: 600px) {
+    padding-left: 10vw;
+  }
+
   .container {
-    border-radius: 10%;
+    padding: 3% 0 3% 0; // additional 5 0 5 0
+    border-radius: 10px;
+    min-height: 25vh;
     margin-top: 20vh;
-    width: 33vw;
-    height: max-content;
+    width: 35vw;
+    border: 0.5px #000000 solid;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
-    gap: 4vh;
+    gap: 3vh;
+    opacity: 0.9;
 
-    -webkit-box-shadow: -20px 0px 25px 1px $naruto-aura inset, 20px 0px 25px 1px $saske-aura inset;
-    -moz-box-shadow: -20px 0px 25px 1px $naruto-aura inset, 20px 0px 25px 1px $saske-aura inset;
-    box-shadow: -20px 0px 25px 1px $naruto-aura inset, 20px 0px 25px 1px $saske-aura inset;
+    @media only screen and (min-width: 320px) and (max-width: 600px) {
+      //font-size: 24px;
+      width: 50vw;
+    }
 
 
     background: #ffffff;
+    //background: #E5E5E5;
 
     .entry-header-text {
       font-size: 48px;
-      font-weight: 300;
-      margin-top: 5vh;
+
+      //
+      @media only screen and (max-width: 320px) {
+        font-size: 20px;
+      }
+
+      @media only screen and (min-width: 320px) and (max-width: 600px) {
+        font-size: 24px;
+      }
+
+      @media only screen and (min-width: 600px) and (max-width: 768px) {
+        font-size: 36px;
+      }
+
+      @media only screen and (min-width: 768px) and (max-width: 900px) {
+        font-size: 38px;
+      }
+
+      @media only screen and (min-width: 900px) and (max-width: 1200px) {
+        font-size: 42px;
+      }
     }
 
-    form {
+    .login-form {
+      flex-wrap: wrap;
 
-      * {
+      * { // correct this one if you want to change look of text (<p></p>, <a></a>, etc)
         display: block;
       }
 
@@ -40,35 +68,29 @@ section.entry-section {
         font-size: 18px;
       }
 
-      input {
-        width: 100%;
-        height: 3vh;
-        font-size: 16px;
-        padding-left: 5px;
-        margin-bottom: 15px;
+      .common-input {
+        margin: 0;
       }
 
       .btn {
+        border-radius: 5px;
         width: fit-content;
-        padding: 1.2vh 18%;
-        border: 0 ;
-        color: black;
-        border-radius: 5%;
+        padding: 1.5vh 20%;
+        border: 0;
+        color: var(--login-button-text-color);
+        background: var(--login-button-background);
+        opacity: var(--login-button-opacity);
         margin: 4vh 0 2vh auto;
         transition: .4s;
       }
 
       .btn:hover {
-        box-shadow: 0 0 30px $button-light;
+        opacity: var(--login-button-hover-opacity);
         cursor: pointer;
       }
 
-      p {
-        padding-bottom: 10vh;
-      }
-      .validation-error{
-        color: red;
-        padding: 1px;
+      .validation-error {
+        color: $red-background;
       }
     }
   }

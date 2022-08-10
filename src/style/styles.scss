@@ -25,6 +25,10 @@ html, body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+  background: var(--primary-image);
+  background-size: cover;
 }
 
 @import "mat-elements/index";
+@import "forms/common-form";
+@import "inputs/index";

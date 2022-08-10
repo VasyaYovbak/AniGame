@@ -18,7 +18,7 @@ export const NarutoTheme: Theme = {
     "--home-header-text-stroke-color": "",
 
     "--home-button-background": 'rgb(177, 27, 62)',
-    "--home-button-text-color": 'white',
+    "--home-button-text-color": '#ffffff',
     "--home-button-opacity": 0.7,
     "--home-button-hover-opacity": 1,
 
@@ -31,6 +31,12 @@ export const NarutoTheme: Theme = {
     "--home-card-image-describe-text-stroke-width": "",
     "--home-card-image-describe-text-stroke-color": "",
     // "theme-color-1": "rgb(177, 27, 62)" // add alike variables later on
+
+    // login page:
+    "--login-button-background": "rgb(177, 27, 62)",
+    "--login-button-text-color": '#ffffff',
+    "--login-button-opacity": 0.8,
+    "--login-button-hover-opacity": 1,
   }
 };
 
@@ -49,7 +55,7 @@ export const BleachTheme: Theme = {
     "--home-header-text-stroke-color": "#000000",
 
     "--home-button-background": "#3A3331",
-    "--home-button-text-color": 'white',
+    "--home-button-text-color": '#ffffff',
     "--home-button-opacity": 0.9,
     "--home-button-hover-opacity": 1,
 
@@ -64,6 +70,11 @@ export const BleachTheme: Theme = {
     "--home-card-image-describe-text-stroke-color": "#3A3331",
 
     "--navigation-text-color": "#ffffff",
+    // login page:
+    "--login-button-background": "#3A3331",
+    "--login-button-text-color": '#ffffff',
+    "--login-button-opacity": 0.8,
+    "--login-button-hover-opacity": 1,
   }
 };
 
@@ -82,7 +93,7 @@ export const OnePieceTheme: Theme = {
     "--home-header-text-stroke-color": "#000000",
 
     "--home-button-background": "#891211",
-    "--home-button-text-color": 'white',
+    "--home-button-text-color": '#ffffff',
     "--home-button-opacity": 0.7,
     "--home-button-hover-opacity": 0.9,
 
@@ -97,6 +108,11 @@ export const OnePieceTheme: Theme = {
     "--home-card-image-describe-text-stroke-color": "#3A3331",
 
     "--navigation-text-color": "#ffffff",
+    // login page:
+    "--login-button-background": "#891211",
+    "--login-button-text-color": '#ffffff',
+    "--login-button-opacity": 0.9,
+    "--login-button-hover-opacity": 1,
   }
 };
 
@@ -116,7 +132,7 @@ export const VagabondTheme: Theme = {
     "--home-header-text-stroke-color": "#ffffff",
 
     "--home-button-background": "#27336F",
-    "--home-button-text-color": 'white',
+    "--home-button-text-color": '#ffffff',
     "--home-button-opacity": 0.7,
     "--home-button-hover-opacity": 0.9,
 
@@ -130,6 +146,12 @@ export const VagabondTheme: Theme = {
     "--home-card-image-describe-text-stroke-color": "#ffffff",
 
     "--navigation-text-color": "#ffffff",
+
+    // login page:
+    "--login-button-background": "#27336F",
+    "--login-button-text-color": '#ffffff',
+    "--login-button-opacity": 0.7,
+    "--login-button-hover-opacity": 1,
   }
 };
 
@@ -137,6 +159,7 @@ export const FateStayNightTheme: Theme = {
   name: "FateStayNightTheme",
   properties: {
     "--primary-image": 'url(assets/primary-images/fate-stay-night.jpg) no-repeat fixed center 0',
+    // home page:
 
     // home images
     "--home-fight-icon-name": "fate-stay-night-fight-scene",
@@ -162,6 +185,12 @@ export const FateStayNightTheme: Theme = {
     "--home-card-image-describe-text-stroke-color": "#000000",
 
     "--navigation-text-color": "#ffffff",
+
+    // login page:
+    "--login-button-background": "#f4f5c2",
+    "--login-button-text-color": '#000000',
+    "--login-button-opacity": 0.8,
+    "--login-button-hover-opacity": 1,
   }
 };
 
