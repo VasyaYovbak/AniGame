@@ -1,68 +1,26 @@
 @import "../../../../style/variables";
 
-section.entry-section {
-  display: flex;
-  justify-content: center;
-
+section.common-section {
   @media only screen and (min-width: 320px) and (max-width: 600px) {
     padding-left: 10vw;
   }
 
-  .container {
-    padding: 3% 0 3% 0; // additional 5 0 5 0
-    border-radius: 10px;
+  .auth-container {
+    // possible padding 5 0 5 0
     min-height: 25vh;
-    margin-top: 20vh;
-    width: 35vw;
-    border: 0.5px #000000 solid;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 3vh;
-    opacity: 0.9;
 
     @media only screen and (min-width: 320px) and (max-width: 600px) {
-      //font-size: 24px;
       width: 50vw;
-    }
-
-
-    background: #ffffff;
-    //background: #E5E5E5;
-
-    .entry-header-text {
-      font-size: 48px;
-
-      //
-      @media only screen and (max-width: 320px) {
-        font-size: 20px;
-      }
-
-      @media only screen and (min-width: 320px) and (max-width: 600px) {
-        font-size: 24px;
-      }
-
-      @media only screen and (min-width: 600px) and (max-width: 768px) {
-        font-size: 36px;
-      }
-
-      @media only screen and (min-width: 768px) and (max-width: 900px) {
-        font-size: 38px;
-      }
-
-      @media only screen and (min-width: 900px) and (max-width: 1200px) {
-        font-size: 42px;
-      }
     }
 
     .login-form {
       flex-wrap: wrap;
 
+      width: 70%;
+
       * { // correct this one if you want to change look of text (<p></p>, <a></a>, etc)
         display: block;
       }
-
-      width: 70%;
 
       label {
         font-size: 18px;

@@ -1,16 +1,11 @@
 import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {FormControl, FormGroup} from "@angular/forms";
 import {CookieService} from "../../../services/cookie.service";
 import {AuthorizationService} from "../../../services/authorization.service";
 import {Router} from "@angular/router";
-import {fieldDecorator} from "../../../../assets/type-script/validators/decorators";
-import {
-  getMinFieldLengthError,
-  requiredFieldError,
-  wrongEmailError
-} from "../../../../assets/type-script/validators/constans/errors";
-import {email, password} from "../../../../assets/type-script/validators/constans/field-names";
-import {passwordMinLength} from "../../../../assets/type-script/validators/constans/field-constrains";
+import {emailMaxLength} from "../../../../assets/type-script/validators/constans/field-constrains"; // have to think how to improve this one
+import {getEmailValidators} from "../../../../assets/type-script/validators/fields/email";
+import {getPasswordValidators} from "../../../../assets/type-script/validators/fields/password";
 
 @Component({
   selector: 'app-login',
@@ -20,14 +15,11 @@ import {passwordMinLength} from "../../../../assets/type-script/validators/const
 
 
 export class LoginComponent implements OnInit {
-
   loginForm = new FormGroup({
-    email: new FormControl('', [fieldDecorator(email, wrongEmailError, Validators.email),
-      fieldDecorator(email, requiredFieldError, Validators.required)]),
+    email: new FormControl('', getEmailValidators()),
 
     password: new FormControl('',
-      [fieldDecorator(password, getMinFieldLengthError(password, passwordMinLength),
-        Validators.minLength(passwordMinLength)), fieldDecorator(password, requiredFieldError, Validators.required)])
+      getPasswordValidators())
   })
 
   constructor(private cookie: CookieService, private auth: AuthorizationService, private router: Router) {
@@ -51,6 +43,5 @@ export class LoginComponent implements OnInit {
         }
       })
     }
-
   }
 }

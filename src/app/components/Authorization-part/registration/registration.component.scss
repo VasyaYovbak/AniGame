@@ -1,0 +1,58 @@
+@import "../../../../style/variables";
+
+.common-section {
+  .auth-container {
+    min-height: 25vh;
+    margin-bottom: 300px;
+
+    .registration-form {
+      flex-wrap: wrap;
+      align-items: center;
+      width: 50%;
+      //gap: 15px;
+
+      .common-input {
+        margin: 0;
+      }
+
+      .visibility-password-label {
+        display: flex;
+        align-items: center;
+        width: 102%;
+        justify-content: flex-end;
+      }
+
+      .visibility-password-input {
+        padding-right: 30px;
+      }
+
+      .visibility-icon {
+        padding: 0 7px;
+        position: absolute;
+      }
+
+
+      .btn {
+        border-radius: 5px;
+        width: fit-content;
+        padding: 1.7vh 25%;
+        border: 0;
+        color: var(--login-button-text-color);
+        background: var(--login-button-background);
+        opacity: var(--login-button-opacity);
+        margin: 3vh 0 2.5vh 0;
+        transition: .4s;
+      }
+
+      .btn:hover {
+        opacity: var(--login-button-hover-opacity);
+        cursor: pointer;
+      }
+
+      .validation-error {
+        color: $red-background;
+      }
+    }
+  }
+
+}
