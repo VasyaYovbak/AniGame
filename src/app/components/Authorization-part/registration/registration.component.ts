@@ -7,14 +7,14 @@ import {Router} from "@angular/router";
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
-  styleUrls: ['../login/login.component.scss']
+  styleUrls: ['/registration.component.scss']
 })
 export class RegistrationComponent implements OnInit {
 
   registrationForm = new FormGroup({
-    email: new FormControl('',[Validators.required,Validators.email]),
+    email: new FormControl('',[Validators.required, Validators.email]),
     username:new FormControl('',[Validators.required]),
-    password: new FormControl('',[Validators.required,Validators.minLength(8)]),
+    password: new FormControl('',[Validators.required, Validators.minLength(8)]),
     confirmPassword:new FormControl('',[Validators.required])
   })
   passwordNotEqual = false

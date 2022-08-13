@@ -1,9 +1,11 @@
-import {Component, DoCheck, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {CookieService} from "../../services/cookie.service";
 import {AuthorizationService} from "../../services/authorization.service";
-import {ActivatedRoute, NavigationEnd, Router} from "@angular/router";
-import {filter, interval} from "rxjs";
+import {interval} from "rxjs";
 import {UserService} from "../../services/user.service";
+import {ThemeService} from "../../services/theme.service";
+import {ThemeStates} from "src/assets/type-script/theme-selector/items";
+import {OptionState} from "../circle-selector/circle-selector.models";
 
 @Component({
   selector: 'app-navigation',
@@ -14,7 +16,13 @@ export class NavigationComponent implements OnInit {
 
   userId: number;
 
-  constructor(private cookie: CookieService, private auth: AuthorizationService, private userService: UserService) {
+  themeStates = ThemeStates;
+
+  selectedState = this.themeStates[0];
+
+  constructor(
+    private cookie: CookieService, private auth: AuthorizationService, private userService: UserService,
+    private _themeService: ThemeService) {
   }
 
   ngOnInit(): void {
@@ -35,6 +43,14 @@ export class NavigationComponent implements OnInit {
       this.cookie.clearCookie('access_token');
       this.cookie.clearCookie('self');
     })
+  }
+
+  onStateChange(state: OptionState) {
+    this.selectedState = state;
+    const selectedTheme = this._themeService.availableThemes.find((theme) => theme.name === `${state.name}Theme`)
+    if (selectedTheme) {
+      this._themeService.setActiveTheme(selectedTheme);
+    }
   }
 
 }
