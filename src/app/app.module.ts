@@ -23,6 +23,8 @@ import {CircleSelectorModule} from "./components/circle-selector/circle-selector
 import {MatButtonModule} from "@angular/material/button";
 import {MatMenuModule} from "@angular/material/menu";
 import { ClientValidationComponent } from './components/client-validation/client-validation.component';
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
 
 @NgModule({
   declarations: [
@@ -36,19 +38,21 @@ import { ClientValidationComponent } from './components/client-validation/client
     TableComponent,
     ClientValidationComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    ReactiveFormsModule,
-    FormsModule,
-    HttpClientModule,
-    GameModule,
-    BrowserAnimationsModule,
-    MatIconModule,
-    MatButtonModule,
-    CircleSelectorModule,
-    MatMenuModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        ReactiveFormsModule,
+        FormsModule,
+        HttpClientModule,
+        GameModule,
+        BrowserAnimationsModule,
+        MatIconModule,
+        MatButtonModule,
+        CircleSelectorModule,
+        MatMenuModule,
+        MatFormFieldModule,
+        MatInputModule
+    ],
   providers: [CookieService, AuthorizationService, AuthGuard,
     {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true}],
   bootstrap: [AppComponent]

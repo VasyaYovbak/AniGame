@@ -187,8 +187,8 @@ export const FateStayNightTheme: Theme = {
     "--navigation-text-color": "#ffffff",
 
     // login page:
-    "--login-button-background": "#f4f5c2",
-    "--login-button-text-color": '#000000',
+    "--login-button-background": "#ff5a00",
+    "--login-button-text-color": '#ffffff',
     "--login-button-opacity": 0.8,
     "--login-button-hover-opacity": 1,
   }
