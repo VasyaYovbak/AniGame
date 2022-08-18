@@ -5,6 +5,7 @@
     <span>{{massage.username}}</span>:<br> {{massage.text}}
   </p>
 </div>
-<input type="text" #field [value]="input" (input)="input=field.value"
-       (keydown.enter)="sendMessage()"
->
+<label for="chat-input"></label>
+<!--placeholder="Type something to communicate with opponent"-->
+<input  class="common-input" type="text" id="chat-input" placeholder="Ask your opponent a question" #field [value]="input" (input)="input=field.value"
+       (keydown.enter)="sendMessage()">

@@ -50,17 +50,25 @@ export class GameRoomComponent implements OnInit {
           game_id: params['id']
         }
       });
-      this.gameService.getCards<{
-        cards: Array<Card>,
-        selected_character: Card
-      }>(params['id']).subscribe((data) => {
-          this.cards = data?.cards;
-          this.selected_character = data?.selected_character.character;
-          console.log(this.selected_character)
-        },
-        (error) => {
-          this.router.navigate(['/home']);
-        });
+      // this.gameService.getCards<{
+      //   cards: Array<Card>,
+      //   selected_character: Card
+      // }>(params['id']).subscribe((data) => {
+      //     this.cards = data?.cards;
+      //     this.selected_character = data?.selected_character.character;
+      //     console.log(this.selected_character)
+      //   },
+      //   (error) => {
+      //     this.router.navigate(['/home']);
+      //   });
+      let cardsMockUp = []
+      for (let i = 0; i < 28; i++){
+        // image:"-150 -150"
+        cardsMockUp.push({card_id: 1, character: {name:"Naruto", image:"-150px -150px"} , is_active: true})
+      }
+      this.cards = cardsMockUp;
+      this.selected_character.name = 'Sasuke'; // have to make sure character name is not greater than 18
+
       this.webSocketService.emit('connectToChat', {
         "access_token": this.cookie.getAuthToken(),
         "data": {

@@ -1,44 +1,50 @@
 .container {
   display: flex;
-  justify-content: center;
+  padding: 10px;
+  column-gap: 10px;
 
-  .game-board {
-    width: max-content;
-    height: max-content;
-    background: white;
-    margin-top: 6vh;
-    display: grid;
-    grid-template:
-      "A A A A A A A B B"
-      "A A A A A A A C C"
-      "A A A A A A A C C"
-      "A A A A A A A C C"
-      "A A A A A A A C C";
 
-    game-cards {
-      grid-area: A;
+  .aside {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .selected-character-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
     }
 
     .selected-character {
-      border: 1px solid black;
-      grid-area: B;
-      ::ng-deep{
-        img{
-          width: 150px;
-          height: 150px;
-        }
-      }
+      display: flex;
+      column-gap: 3px;
     }
 
-    game-chat {
-      border: 1px solid black;
-      grid-area: C;
-      width: 325px;
+    .btn {
+      padding: 10px 35px;
+      font-size: 18px;
+      border-radius: 15px;
+      color: var(--home-button-text-color);
+      opacity: var(--home-button-opacity);
+      background: var(--home-button-background);
+      transition: all .4s;
+      cursor: pointer;
+      width: 95%;
     }
 
-
+    .btn:hover {
+      opacity: var(--home-button-hover-opacity);
+      box-shadow: none;
+    }
   }
-  .results{
+
+  game-chat {
+    //width: 100%;
+    width: 325px;
+  }
+
+  .results {
     width: 90%;
     height: 85vh;
     background: white;
