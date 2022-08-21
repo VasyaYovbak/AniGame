@@ -7,6 +7,8 @@ import {ChatComponent} from "./game-room/game-room-components/chat/chat.componen
 import {BrowserModule} from "@angular/platform-browser";
 import {GameService} from "../../services/game.service";
 import {WebSocketService} from "../../services/web-socket.service";
+import {MatIconModule} from "@angular/material/icon";
+import {MatInputModule} from "@angular/material/input";
 import {WaitingRoomModule} from "./waiting-room/waiting-room.module";
 import {RoomModule} from "./room/room.module";
 
@@ -21,6 +23,8 @@ import {RoomModule} from "./room/room.module";
   imports: [
     BrowserModule,
     CommonModule,
+    MatIconModule,
+    MatInputModule,
     RoomModule,
     WaitingRoomModule
   ],

@@ -1,38 +1,35 @@
-<section class="entry-section">
-  <div class="container">
-    <p class="entry-header-text">Registration</p>
-    <form class="registration-form" (ngSubmit)="onSubmit()" [formGroup]="registrationForm">
-      <label for="email">Email</label>
-      <input type="text" name="email" id='email' formControlName="email">
-      <p *ngIf="registrationForm.get('email')?.invalid&&registrationForm.get('email')?.touched"
-         class="validation-error">
-        Wrong email, please use correct email!!!
-      </p>
-      <label for="username">Username</label>
-      <input type="text" name="username" id='username' formControlName="username">
-      <p *ngIf="registrationForm.get('username')?.invalid&&registrationForm.get('username')?.touched"
-         class="validation-error">
-        Username is required!
-      </p>
-      <label for="password">Password</label>
-      <input type="password" name="password" id="password" formControlName="password">
-      <p *ngIf="registrationForm.get('password')?.invalid&&registrationForm.get('password')?.touched"
-         class="validation-error">
-        Wrong password, minimal length is 8 !
-      </p>
-      <label for="password">Confirm password</label>
-      <input type="password" name="confirm-password" id="confirm-password" formControlName="confirmPassword">
-      <p
-        *ngIf="passwordNotEqual || (registrationForm.get('confirmPassword')?.invalid&&registrationForm.get('confirmPassword')?.touched)"
-        class="validation-error">
-        Passwords must be equal!
-      </p>
-      <button class="btn" [disabled]="registrationForm.invalid"
-              [ngStyle]="{background:registrationForm.valid === true ? '#f4dba5': '#f5f2f2'}"
-      >Registration
-      </button>
+<section class="common-section">
+  <div class="auth-container">
+    <p class="auth-header-text">Registration</p>
+    <form class="registration-form common-form" (ngSubmit)="onSubmit()" [formGroup]="registrationForm">
 
-      <p>Already have an account? <a routerLink="/login">Login</a></p>
+      <label for="email"></label>
+      <input class="common-input" type="text" name="email" id='email' placeholder="Email" formControlName="email"
+             maxlength="256">
+      <app-client-validation [form]="registrationForm" [fieldName]="'email'"
+                             class="validation-error"></app-client-validation>
+
+      <label for="username"></label>
+      <input class="common-input" type="text" name="username" id='username' placeholder="Username"
+             formControlName="username" maxlength="20">
+
+
+      <app-client-validation [form]="registrationForm" fieldName="username"
+                             class="validation-error"></app-client-validation>
+
+      <label for="password">
+      </label>
+
+      <div class="visibility-password-label">
+        <input class="visibility-password-input common-input" [type]=" showPassword ? 'text' : 'password'"
+               name="password" id="password" placeholder="Password" formControlName="password" maxlength="36">
+        <mat-icon class="visibility-icon" matSuffix
+                  (click)='showHidePasswordToggle()'> {{showPassword ? 'visibility' : 'visibility_off'}}</mat-icon>
+      </div>
+      <app-client-validation [form]="registrationForm" fieldName="password"
+                             class="validation-error"></app-client-validation>
+      <button class="btn">Sign Up</button>
+      <p>Already have an account? <a routerLink="/login">Sign In</a></p>
     </form>
   </div>
 </section>

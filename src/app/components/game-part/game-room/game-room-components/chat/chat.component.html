@@ -1,10 +1,15 @@
 <div class="chat" #chat>
   <p *ngFor="let massage of all_massage"
-     [ngClass]="{'my-massage':massage.isMy}"
-  >
+     [ngClass]="{'my-massage':massage.isMy}">
     <span>{{massage.username}}</span>:<br> {{massage.text}}
   </p>
 </div>
-<input type="text" #field [value]="input" (input)="input=field.value"
-       (keydown.enter)="sendMessage()"
->
+<label for="chat-input"></label>
+<!--placeholder="Type something to communicate with opponent"-->
+<div class="chat-input-wrapper">
+  <input  class="common-input chat-input" type="text" id="chat-input" placeholder="Ask your opponent a question" #field [value]="input" (input)="input=field.value"
+          (keydown.enter)="sendMessage()" maxlength="300">
+  <mat-icon class="send-icon" matSuffix
+            (click)='sendMessage()'>send</mat-icon>
+</div>
+
