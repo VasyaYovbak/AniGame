@@ -1,8 +1,11 @@
-<div class="card">
-  <div class="image"
-    [ngStyle]="{'background-position':character.image}"
-  >
+<div class="game-card" [ngClass]="this.additionalClass">
+  <div class="image" [ngStyle]="{'background-position':character.image}">
+    <div class="character-name-wrapper">
+      <p class="character-name">{{character?.name}}</p>
+    </div>
   </div>
-  <p>{{character?.name}}</p>
+  <ng-container *ngIf="additionalClass === 'opponent-card'">
+    <p class="image-underline-message">{{underImageMessage}}</p>
+  </ng-container>
 </div>
 

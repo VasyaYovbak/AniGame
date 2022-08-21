@@ -14,7 +14,7 @@ const routes: Routes = [
   {path: "login", component: LoginComponent},
   {path: "registration", component: RegistrationComponent},
   {path: "game/search", component: WaitingRoomComponent, canActivate: [AuthGuard],},
-  {path: 'game/:id', component: GameRoomComponent, canActivate: [AuthGuard]},
+  {path: 'game/:id', component: GameRoomComponent}, //, canActivate: [AuthGuard]},
   {path: 'leaderboard', component: LeaderboardComponent},
   {path: 'profile/:id', component: ProfileComponent, canActivate: [AuthGuard]},
   {path: '**', component: HomeComponent}

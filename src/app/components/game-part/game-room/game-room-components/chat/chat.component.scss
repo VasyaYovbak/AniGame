@@ -3,30 +3,55 @@
   align-items: center;
   flex-direction: column;
   padding: 5px;
-  .chat {
+
+  .chat { // should improve this one later
     width: 100%;
-    height: 100%;
+
+    height: 50vh;
     padding: 5px;
     box-sizing: border-box;
-    background: #ffe2e2;
+    border-radius: 5px;
+
+    background-color: #ffffff;
+    opacity: 0.8;
     margin-bottom: 10px;
     overflow-y: scroll;
-    p{
-      span{
+
+    p {
+      span {
         font-size: 16px;
         color: red;
       }
 
-      &.my-massage{
+      &.my-massage {
         text-align: right;
       }
     }
-
   }
-  input{
+
+  .chat-input-wrapper {
+    display: flex;
+    align-items: center;
     width: 100%;
-    height: 30px;
-    padding-left: 10px;
-    box-sizing: border-box;
+    justify-content: flex-end;
+  }
+
+  .chat-input {
+    padding-right: 30px;
+  }
+
+  .send-icon {
+    padding: 0 7px 0 7px;
+    position: absolute;
+    transform: rotate(-80deg);
+  }
+
+  .send-icon:hover{
+    cursor: pointer;
+    color: #18A5FE;
+  }
+
+  .common-input {
+    margin: 0;
   }
 }

@@ -1,13 +1,15 @@
 <div class="container">
-  <div class="game-board" *ngIf="!isGameEnd">
-    <game-cards [cards]="cards"></game-cards>
-    <game-card class="selected-character" [character]="selected_character"
-               [ngStyle]="{}"
-    ></game-card>
+  <game-cards [cards]="cards"></game-cards>
+  <aside class="aside">
+    <div class="selected-character-wrapper">
+      <div class="selected-character">
+        <game-card [type]="'opponent-card'" [character]="selected_character"
+                   [ngStyle]="{}" [underImageMessage]="'Card for opponent'"></game-card>
+        <game-card [type]="'opponent-card'" [character]="selected_character"
+                   [ngStyle]="{}" [underImageMessage]="'Opponent\'s card'"></game-card>
+      </div>
+      <button class="btn">Withdraw selected cards</button>
+    </div>
     <game-chat></game-chat>
-  </div>
-  <div class="results" *ngIf="isGameEnd">
-    <p>This game is over, the results have not been added)))</p>
-    <p><span>{{winResult.winner}}</span>:win <br><span>{{winResult.loser}}</span>:lose</p>
-  </div>
+  </aside>
 </div>
