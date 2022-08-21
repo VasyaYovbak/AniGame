@@ -41,10 +41,8 @@ export class GameService {
 
   sendMessage(text: string, game_id: number) {
     let message = {
-      "data": {
-        "text": text,
-        "game_id": game_id,
-      }
+      "text": text,
+      "game_id": game_id,
     }
     this.webSocketService.emit('chat', message);
 

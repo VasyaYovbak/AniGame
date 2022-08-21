@@ -8,8 +8,8 @@ import {CookieService} from "./cookie.service";
 })
 export class WebSocketService {
   socket: any;
-  // url: string = 'wss://ani-game-backend.herokuapp.com';
-  url: string = 'ws://127.0.0.1:2012';
+  url: string = 'wss://ani-game-backend.herokuapp.com';
+  // url: string = 'ws://127.0.0.1:2012';
 
   constructor(private cookie: CookieService) {
     this.socket = io.connect(this.url)

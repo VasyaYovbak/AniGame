@@ -1,3 +1,10 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+
 .container {
   display: flex;
   padding: 10px;
@@ -26,7 +33,6 @@
       font-size: 18px;
       border-radius: 15px;
       color: var(--home-button-text-color);
-      opacity: var(--home-button-opacity);
       background: var(--home-button-background);
       transition: all .4s;
       cursor: pointer;
@@ -36,6 +42,12 @@
     .btn:hover {
       opacity: var(--home-button-hover-opacity);
       box-shadow: none;
+    }
+
+    .btn.disabled {
+      cursor: default;
+      background: red;
+      opacity: 0.5;
     }
   }
 
@@ -53,5 +65,23 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+  }
+}
+
+
+.spinner {
+  width: 200px;
+  height: 200px;
+  margin: auto;
+  position: absolute;
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Mangekyou_Sharingan_Kakashi.svg/1200px-Mangekyou_Sharingan_Kakashi.svg.png");
+  background-size: contain;
+  background-position: center;
+  animation: spinner .8s linear infinite;
+}
+
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
   }
 }

@@ -1,15 +1,27 @@
-<div class="container">
-  <game-cards [cards]="cards"></game-cards>
-  <aside class="aside">
-    <div class="selected-character-wrapper">
-      <div class="selected-character">
-        <game-card [type]="'opponent-card'" [character]="selected_character"
-                   [ngStyle]="{}" [underImageMessage]="'Card for opponent'"></game-card>
-        <game-card [type]="'opponent-card'" [character]="selected_character"
-                   [ngStyle]="{}" [underImageMessage]="'Opponent\'s card'"></game-card>
+<div class="container" *ngIf="!!cards.length; else spinner">
+  <ng-container *ngIf="!isGameEnd else gameEnd">
+    <game-cards [cards]="cards" [isYourTurn]="isYourTurn"></game-cards>
+    <aside class="aside">
+      <div class="selected-character-wrapper">
+        <div class="selected-character">
+          <game-card [type]="'opponent-card'" [card]="selected_character!"
+                     [ngStyle]="{}" [underImageMessage]="'Card for opponent'"></game-card>
+          <!--        <game-card [type]="'opponent-card'" [character]="selected_character"-->
+          <!--                   [ngStyle]="{}" [underImageMessage]="'Opponent\'s card'"></game-card>-->
+        </div>
+        <button class="btn" (click)="makeStep()" [ngClass]="{'disabled':!isYourTurn}">{{
+          isYourTurn ? 'Withdraw selected cards' : 'Wait for opponent step'
+          }}</button>
       </div>
-      <button class="btn">Withdraw selected cards</button>
-    </div>
-    <game-chat></game-chat>
-  </aside>
+      <game-chat></game-chat>
+    </aside>
+  </ng-container>
 </div>
+
+
+<ng-template #spinner>
+  <div class="spinner"></div>
+</ng-template>
+<ng-template #gameEnd>
+  This game Already END!!!
+</ng-template>

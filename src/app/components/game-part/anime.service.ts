@@ -7,7 +7,9 @@ import {Anime} from "./game.models";
 })
 export class AnimeService {
 
-  backendUrl = "http://127.0.0.1:2012"
+  // backendUrl = "http://127.0.0.1:2012"
+  backendUrl = 'https://ani-game-backend.herokuapp.com'
+
 
   constructor(private http: HttpClient) {
   }
