@@ -1,7 +1,8 @@
 <div class="game-card" [ngClass]="this.additionalClass">
-  <div class="image" [ngStyle]="{'background-position':character.image}">
+  <div class="image {{AnimeIdsList[card!.character!.anime_id]}}"
+       [ngStyle]="{'background-position':card.character!.image} ">
     <div class="character-name-wrapper">
-      <p class="character-name">{{character?.name}}</p>
+      <p *ngIf="card.is_active" class="character-name">{{card.character?.name}}</p>
     </div>
   </div>
   <ng-container *ngIf="additionalClass === 'opponent-card'">

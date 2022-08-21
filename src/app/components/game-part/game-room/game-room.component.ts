@@ -4,8 +4,7 @@ import {WebSocketService} from "../../../services/web-socket.service";
 import {CookieService} from "../../../services/cookie.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {GameService} from "../../../services/game.service";
-import {Card} from "./game-room-components/cards/cards.component";
-import {Character} from "./game-room-components/card/card.component";
+import {Card} from "./game-room-components/card/card.component";
 
 
 @Component({
@@ -21,13 +20,15 @@ export class GameRoomComponent implements OnInit {
     loser: string
   } = {winner: '', loser: ''};
   cards: Array<Card> = [];
-  selected_character: Character = {
-    name: "",
-    image: "",
+  selected_character: Card = {
+    card_id: 0,
+    is_active: true,
   };
 
+  isYourTurn: boolean = true;
+
+
   constructor(private webSocketService: WebSocketService,
-              private cookie: CookieService,
               private route: ActivatedRoute,
               private gameService: GameService,
               private router: Router
@@ -35,6 +36,11 @@ export class GameRoomComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.webSocketService.listen('change_turn')
+      .subscribe((data) => {
+        this.isYourTurn = !this.isYourTurn;
+      })
+
     this.route.params.subscribe(params => {
       this.webSocketService.listen<{
         winner: string,
@@ -45,37 +51,37 @@ export class GameRoomComponent implements OnInit {
           this.winResult = data;
         });
       this.webSocketService.emit('connect-to-game', {
-        "access_token": this.cookie.getAuthToken(),
-        "data": {
-          game_id: params['id']
-        }
+        game_id: params['id']
       });
-      // this.gameService.getCards<{
-      //   cards: Array<Card>,
-      //   selected_character: Card
-      // }>(params['id']).subscribe((data) => {
-      //     this.cards = data?.cards;
-      //     this.selected_character = data?.selected_character.character;
-      //     console.log(this.selected_character)
-      //   },
-      //   (error) => {
-      //     this.router.navigate(['/home']);
-      //   });
-      let cardsMockUp = []
-      for (let i = 0; i < 28; i++){
-        // image:"-150 -150"
-        cardsMockUp.push({card_id: 1, character: {name:"Naruto", image:"150px -150px"} , is_active: true})
-      }
-      this.cards = cardsMockUp;
-      this.selected_character.name = 'Sasuke'; // have to make sure character name is not greater than 18
-
+      this.gameService.getCards<{
+        cards: Array<Card>,
+        selected_character: Card
+      }>(params['id']).subscribe((data) => {
+          this.cards = data?.cards;
+          this.selected_character.character = data?.selected_character.character;
+          console.log(this.selected_character)
+        },
+        (error) => {
+          this.router.navigate(['/home']);
+        });
       this.webSocketService.emit('connectToChat', {
-        "access_token": this.cookie.getAuthToken(),
-        "data": {
-          game_id: params['id']
-        }
+        game_id: params['id']
       });
     });
+  }
+
+  makeStep() {
+    if (!this.isYourTurn) {
+      return
+    }
+    this.route.params.subscribe((params) => {
+      this.webSocketService.emit('step', {
+          "game_id": params['id'],
+          "cards": this.cards
+        }
+      )
+    })
+
   }
 
 }
