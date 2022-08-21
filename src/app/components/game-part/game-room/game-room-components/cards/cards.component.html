@@ -1,0 +1,12 @@
+<div class="cards">
+  <game-card *ngFor="let card of cards" [card]="card"
+             (click)="chooseCard(card)"
+             [ngStyle]="{'filter':card['is_active']?'blur(0px)':'blur(1px)','opacity':card['is_active']?1:0.8}"
+             [ngClass]="{'active':isYourTurn}"
+  ></game-card>
+<!--  <div class="button-wrap">-->
+<!--    <span (click)="makeStep()"-->
+<!--          [ngClass]="{'active':isYourTurn}"-->
+<!--    >S<br>E<br>N<br>D</span>-->
+<!--  </div>-->
+</div>

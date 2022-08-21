@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Fredoka, fantasy;
+}
+
+.home-svg {
+
+}
+
+.home-svg-cards {
+  stroke: #ffffff;
+  stroke-width: 5px;
+  rx: 10%; // do not remove this line it is for svg border-radius
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background: var(--primary-image);
+  background-size: cover;
+}
+
+@import 'ag-grid-community/styles/ag-grid.css';
+@import 'ag-grid-community/styles/ag-theme-alpine.css';
+
+@import "mat-elements/index";
+@import "forms/common-form";
+@import "inputs/index";
+@import "sections/index";
+@import "containers/index";
+@import "texts/index";
+@import "cards/index";

@@ -1,0 +1,35 @@
+<section class="common-section">
+  <div class="auth-container">
+    <p class="auth-header-text">Registration</p>
+    <form class="registration-form common-form" (ngSubmit)="onSubmit()" [formGroup]="registrationForm">
+
+      <label for="email"></label>
+      <input class="common-input" type="text" name="email" id='email' placeholder="Email" formControlName="email"
+             maxlength="256">
+      <app-client-validation [form]="registrationForm" [fieldName]="'email'"
+                             class="validation-error"></app-client-validation>
+
+      <label for="username"></label>
+      <input class="common-input" type="text" name="username" id='username' placeholder="Username"
+             formControlName="username" maxlength="20">
+
+
+      <app-client-validation [form]="registrationForm" fieldName="username"
+                             class="validation-error"></app-client-validation>
+
+      <label for="password">
+      </label>
+
+      <div class="visibility-password-label">
+        <input class="visibility-password-input common-input" [type]=" showPassword ? 'text' : 'password'"
+               name="password" id="password" placeholder="Password" formControlName="password" maxlength="36">
+        <mat-icon class="visibility-icon" matSuffix
+                  (click)='showHidePasswordToggle()'> {{showPassword ? 'visibility' : 'visibility_off'}}</mat-icon>
+      </div>
+      <app-client-validation [form]="registrationForm" fieldName="password"
+                             class="validation-error"></app-client-validation>
+      <button class="btn">Sign Up</button>
+      <p>Already have an account? <a routerLink="/login">Sign In</a></p>
+    </form>
+  </div>
+</section>

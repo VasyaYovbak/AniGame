@@ -1,0 +1,17 @@
+<div class="profile" *ngIf="profile">
+  <div class="user-data">
+    <div class="image">
+      <img [src]="profile.user_info.image ? profile.user_info.image:'../../assets/img_b.png'" alt="profile image">
+    </div>
+    <div class="user">
+      <p class="name">{{profile.user_info.username}}</p>
+      <p>{{profile.user_info.email}}</p>
+    </div>
+  </div>
+  <div class="games" *ngIf="profile.games">
+    <p>Previous Games</p>
+    <app-table [columns]="['game_id','winner','loser','date']" [data]="profile.games">
+    </app-table>
+  </div>
+</div>
+

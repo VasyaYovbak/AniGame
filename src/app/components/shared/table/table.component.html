@@ -1,0 +1,12 @@
+<table *ngIf="data">
+  <tr>
+    <th *ngFor="let column of columns">
+      {{column}}
+    </th>
+  </tr>
+  <tr *ngFor="let part of data">
+    <td *ngFor="let column of columns">
+      {{part[column]}}
+    </td>
+  </tr>
+</table>

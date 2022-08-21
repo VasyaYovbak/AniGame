@@ -1,0 +1,36 @@
+.game-card {
+  .image {
+    width: 150px;
+    height: 150px;
+  }
+
+  .character-name-wrapper {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    height: 100%;
+
+    .character-name {
+      margin: 0 3px 0 1.5px;
+      color: #ffffff;
+      -webkit-text-stroke-width: 0.3px;
+      -webkit-text-stroke-color: #000000;
+      font-family: Helonia, fantasy;
+      background: rgba(0,0,0,0.6);
+      padding: 0 2px;
+    }
+  }
+
+  .image-underline-message {
+    font-family: Helonia, fantasy;
+  }
+}
+
+.opponent-card {
+  height: 185px;
+  display: flex;
+
+  .image {
+    margin-top: 5px;
+  }
+}

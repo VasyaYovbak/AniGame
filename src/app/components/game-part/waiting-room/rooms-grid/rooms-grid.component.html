@@ -1,0 +1,13 @@
+<ag-grid-angular
+  style="width: 100%; height: 100%"
+  class="ag-theme-alpine-dark room-grid"
+  [columnDefs]="columnDefs"
+  [defaultColDef]="defaultColDef"
+  [rowData]="rowData"
+  [rowSelection]="'multiple'"
+  [animateRows]="true"
+  [getRowId]="getRowId"
+  [rowHeight]="50"
+  (gridReady)="onGridReady($event)"
+  (rowClicked)="onRowClicked($event)"
+></ag-grid-angular>

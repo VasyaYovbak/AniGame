@@ -1,0 +1,5 @@
+@mixin stroked-text($text-color-value, $text-stroke-width-value, $text-stroke-color-value) {
+  color: $text-color-value;
+  -webkit-text-stroke-width: $text-stroke-width-value;
+  -webkit-text-stroke-color: $text-stroke-color-value;
+}

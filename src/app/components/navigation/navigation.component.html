@@ -1,0 +1,36 @@
+<nav>
+  <ul class="nav-elements">
+    <li class="logo">
+      <mat-icon svgIcon="ani-game-logo" class="ani-game-logo"></mat-icon>
+    </li>
+    <li class="nav-element" routerLink="/home">
+      Home
+    </li>
+    <li class="nav-element" routerLink="/profile/{{userId}}">
+      MyProfile
+    </li>
+    <li class="nav-element" routerLink="/leaderboard">
+      Leaderboard
+    </li>
+    <button class="nav-element theme-button" mat-button [matMenuTriggerFor]="themeMenu">
+      Themes
+    </button>
+    <li class="auth-button nav-element" id="login" *ngIf="!isLoggedIn()">
+      <a routerLink="/login">Login</a>
+    </li>
+    <li class="auth-button  nav-element" id="logout" *ngIf="isLoggedIn()" (click)="logout()">
+      <p>Logout</p>
+    </li>
+  </ul>
+</nav>
+
+<mat-menu #themeMenu
+>
+  <div class="circle-wrapper">
+    <app-circle-selector
+      [states]="themeStates"
+      [selectedState]="selectedState"
+      (stateChange)="onStateChange($event)"
+    ></app-circle-selector>
+  </div>
+</mat-menu>

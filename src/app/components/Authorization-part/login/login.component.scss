@@ -1,0 +1,55 @@
+@import "../../../../style/variables";
+
+section.common-section {
+  @media only screen and (min-width: 320px) and (max-width: 600px) {
+    padding-left: 10vw;
+  }
+
+  .auth-container {
+    // possible padding 5 0 5 0
+    min-height: 25vh;
+
+    @media only screen and (min-width: 320px) and (max-width: 600px) {
+      width: 50vw;
+    }
+
+    .login-form {
+      flex-wrap: wrap;
+
+      width: 70%;
+
+      * { // correct this one if you want to change look of text (<p></p>, <a></a>, etc)
+        display: block;
+      }
+
+      label {
+        font-size: 18px;
+      }
+
+      .common-input {
+        margin: 0;
+      }
+
+      .btn {
+        border-radius: 5px;
+        width: fit-content;
+        padding: 1.5vh 20%;
+        border: 0;
+        color: var(--login-button-text-color);
+        background: var(--login-button-background);
+        opacity: var(--login-button-opacity);
+        margin: 4vh 0 2vh auto;
+        transition: .4s;
+      }
+
+      .btn:hover {
+        opacity: var(--login-button-hover-opacity);
+        cursor: pointer;
+      }
+
+      .validation-error {
+        color: $red-background;
+      }
+    }
+  }
+}

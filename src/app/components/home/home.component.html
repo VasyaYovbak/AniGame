@@ -1,0 +1,51 @@
+<header>
+  <div class="container">
+    <div class="header-text-wrapper">
+      <p class="header-text">
+        Start your adventure
+      </p>
+      <p class="header-text">
+        with AniGame
+      </p>
+    </div>
+    <span class="btn" routerLink="/game/search">
+            Start
+    </span>
+  </div>
+</header>
+<section class="game-info">
+  <div class="card">
+    <div class="card-image">
+      <mat-icon [svgIcon]="this.themeService.active.properties['--home-fight-icon-name']" class="img"></mat-icon>
+      <p>Fight with others</p>
+    </div>
+    <div class="describe">
+      <p class="describe-text">
+        Challenge your friends and yourself in a card battle, and prove that you know a lot about your favorite
+        characters.
+      </p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-image">
+      <mat-icon [svgIcon]="this.themeService.active.properties['--home-achievement-icon-name']" class="img"></mat-icon>
+      <p>Achieve the achievements</p>
+    </div>
+    <div class="describe">
+      <p class="describe-text">
+        Want to show everybody how successful you are? Earn new achievements and collect your collection while playing.
+      </p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-image">
+      <mat-icon [svgIcon]="this.themeService.active.properties['--home-lore-icon-name']" class="img"></mat-icon>
+      <p>Learn anime lore</p> <!--      or &lt;!&ndash;      <p>Learn new lores</p>&ndash;&gt;-->
+    </div>
+    <div class="describe">
+      <p class="describe-text">
+        Get to know about characters you may have missed in your favorite anime, manga, or comics.
+      </p>
+    </div>
+  </div>
+</section>

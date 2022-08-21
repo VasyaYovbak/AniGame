@@ -1,0 +1,58 @@
+:host {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile {
+  background: white;
+  width: 40vw;
+  height: max-content;
+  margin-top: 5vh;
+  border-radius: 10px;
+
+  .user-data {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 30px;
+    padding-top: 20px;
+    .image {
+      img {
+        width: 250px;
+        height: 250px;
+        border-radius: 5px;
+      }
+    }
+
+    .user {
+      text-align: center;
+
+      .name {
+        font-size: 32px;
+      }
+
+      p {
+        margin: 3px 0;
+      }
+    }
+  }
+  .games{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    margin: 70px 0;
+    p{
+      font-size: 26px;
+      margin-bottom: 20px;
+    }
+    app-table::ng-deep{
+      table{
+        width: 36vw;
+      }
+    }
+  }
+
+}
