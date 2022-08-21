@@ -8,6 +8,7 @@ import {WaitingRoomComponent} from "./components/game-part/waiting-room/waiting-
 import {AuthGuard} from "./services/guards/auth.guard";
 import {LeaderboardComponent} from "./components/leaderboard/leaderboard.component";
 import {ProfileComponent} from "./components/profile/profile.component";
+import {RoomComponent} from "./components/game-part/room/room.component";
 
 const routes: Routes = [
   {path: "home", component: HomeComponent},
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path: "registration", component: RegistrationComponent},
   {path: "game/search", component: WaitingRoomComponent, canActivate: [AuthGuard],},
   {path: 'game/:id', component: GameRoomComponent, canActivate: [AuthGuard]},
+  {path: 'room/:id', component: RoomComponent, canActivate: [AuthGuard]},
   {path: 'leaderboard', component: LeaderboardComponent},
   {path: 'profile/:id', component: ProfileComponent, canActivate: [AuthGuard]},
   {path: '**', component: HomeComponent}

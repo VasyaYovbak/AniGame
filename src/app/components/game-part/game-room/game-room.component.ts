@@ -45,11 +45,8 @@ export class GameRoomComponent implements OnInit {
           this.winResult = data;
         });
       this.webSocketService.emit('connect-to-game', {
-        "access_token": this.cookie.getAuthToken(),
-        "data": {
           game_id: params['id']
-        }
-      });
+        });
       this.gameService.getCards<{
         cards: Array<Card>,
         selected_character: Card
@@ -62,10 +59,7 @@ export class GameRoomComponent implements OnInit {
           this.router.navigate(['/home']);
         });
       this.webSocketService.emit('connectToChat', {
-        "access_token": this.cookie.getAuthToken(),
-        "data": {
-          game_id: params['id']
-        }
+        game_id: params['id']
       });
     });
   }

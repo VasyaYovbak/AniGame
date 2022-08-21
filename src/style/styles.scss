@@ -29,6 +29,9 @@ body {
   background-size: cover;
 }
 
+@import 'ag-grid-community/styles/ag-grid.css';
+@import 'ag-grid-community/styles/ag-theme-alpine.css';
+
 @import "mat-elements/index";
 @import "forms/common-form";
 @import "inputs/index";

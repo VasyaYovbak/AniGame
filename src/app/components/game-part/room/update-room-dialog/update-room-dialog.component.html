@@ -1,0 +1,22 @@
+<form class="form" [formGroup]='form'>
+  <mat-form-field appearance="fill">
+    <mat-label>room name</mat-label>
+    <input matInput placeholder="Hentai enjoyers" formControlName="name">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Select your anime(s)</mat-label>
+    <mat-select formControlName="animeList" multiple
+                [panelClass]="!animeList.length? 'hide-deferred-select-dummy-option':'' "
+    >
+      <mat-option *ngFor="let anime of animeList" [value]="anime.anime_id">{{anime.name}}</mat-option>
+    </mat-select>
+    <mat-spinner *ngIf="!animeList.length" class="spinner internal-spinner" diameter="20"></mat-spinner>
+  </mat-form-field>
+</form>
+
+<button mat-flat-button (click)="updateRoom()"
+        [class.spinner]="isSending"
+        [disabled]="isSending"
+        color="primary">Update
+</button>

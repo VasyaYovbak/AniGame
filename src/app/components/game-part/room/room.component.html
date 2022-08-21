@@ -1,0 +1,19 @@
+<!--<button mat-flat-button (click)="startRoom()" color="primary">StartGame</button>-->
+<!--<button mat-flat-button (click)="updateRoom()" color="primary">StartGame</button>-->
+<!--<div *ngIf="roomData">-->
+<!--  <p>Room name: {{roomData.name}}</p>-->
+<!--  <p>Room creator: {{roomData.creator_user}}</p>-->
+<!--  <p>second user: {{roomData.second_user}}</p>-->
+<!--</div>-->
+
+<ng-container *ngIf="roomData; else spinner">
+  <p class="waiting-label">Waiting for others to join!</p>
+  <div class="waiting-image">
+  </div>
+  <button mat-flat-button (click)="updateRoom()" color="primary" class="update-btn">Update room settings</button>
+</ng-container>
+
+<ng-template #spinner>
+  <div class="spinner"></div>
+  <p class="waiting-label">Loading</p>
+</ng-template>

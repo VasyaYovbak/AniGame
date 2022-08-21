@@ -29,7 +29,8 @@ export interface Profile {
 })
 export class UserService {
 
-  backendUrl = 'https://ani-game-backend.herokuapp.com'
+  // backendUrl = 'https://ani-game-backend.herokuapp.com'
+  backendUrl = "http://127.0.0.1:2012"
 
   constructor(private cookie: CookieService, private http: HttpClient) {
 

@@ -16,7 +16,6 @@ export class GameService {
   constructor(private http: HttpClient,
               private webSocketService: WebSocketService,
               private router: ActivatedRoute,
-              private cookie: CookieService
   ) {
   }
 
@@ -42,7 +41,6 @@ export class GameService {
 
   sendMessage(text: string, game_id: number) {
     let message = {
-      "access_token": this.cookie.getAuthToken(),
       "data": {
         "text": text,
         "game_id": game_id,
