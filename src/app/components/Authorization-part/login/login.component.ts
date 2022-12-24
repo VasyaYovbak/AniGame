@@ -32,9 +32,8 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.valid) {
       this.auth.login(this.loginForm.value).subscribe({
         next: data => {
-          this.cookie.setCookie('access_token', data['access_token'], 60);
-          this.cookie.setCookie('self', JSON.stringify(data['user']), 60);
-          this.router.navigate(['/home']);
+          this.cookie.setAllAuthCookies(data['access_token'], data['refresh_token'], JSON.stringify(data['user']));
+          this.router.navigate(['/game/search']);
         },
         error: err => {
           if (err.status === 403) {
