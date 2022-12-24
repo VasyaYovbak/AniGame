@@ -6,6 +6,7 @@ import {UserService} from "../../services/user.service";
 import {ThemeService} from "../../services/theme.service";
 import {ThemeStates} from "src/assets/type-script/theme-selector/items";
 import {OptionState} from "../circle-selector/circle-selector.models";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-navigation',
@@ -21,8 +22,8 @@ export class NavigationComponent implements OnInit {
   selectedState = this.themeStates[0];
 
   constructor(
-    private cookie: CookieService, private auth: AuthorizationService, private userService: UserService,
-    private _themeService: ThemeService) {
+    public cookie: CookieService, private auth: AuthorizationService, private userService: UserService,
+    private router: Router, private _themeService: ThemeService) {
   }
 
   ngOnInit(): void {
@@ -34,15 +35,14 @@ export class NavigationComponent implements OnInit {
     })
   }
 
-  isLoggedIn() {
-    return !(this.cookie.getAuthToken() === null);
-  }
-
   logout() {
-    this.auth.logout().subscribe(() => {
-      this.cookie.clearCookie('access_token');
-      this.cookie.clearCookie('self');
-    })
+    let refreshToken = this.cookie.getRefreshToken();
+    if (refreshToken != null) {
+      this.auth.logout(refreshToken).subscribe(() => {
+        this.cookie.clearAllAuthCookies();
+        this.router.navigate(['/login']);
+      })
+    }
   }
 
   onStateChange(state: OptionState) {

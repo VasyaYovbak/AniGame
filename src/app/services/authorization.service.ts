@@ -20,6 +20,7 @@ export class AuthorizationService {
   login(loginData: { email: string, password: string }) {
     return this.http.post<{
       access_token: string,
+      refresh_token: string,
       user: {
         id: number,
         username: string,
@@ -33,6 +34,7 @@ export class AuthorizationService {
   registration(registrationData: { email: string, username: string, password: string }) {
     return this.http.post<{
       access_token: string,
+      refresh_token: string,
       user: {
         id: number,
         username: string,
@@ -43,7 +45,25 @@ export class AuthorizationService {
     }>(this.backendUrl + '/registration', registrationData)
   }
 
-  logout() {
-    return this.http.post(this.backendUrl + '/logout', {});
+  logout(token: string) {
+    return this.http.post(this.backendUrl + '/logout', {
+      refresh_token: token
+    });
+  }
+
+  refreshToken(token: string) {
+    return this.http.post<{
+      access_token: string,
+      refresh_token: string,
+      user: {
+        id: number,
+        username: string,
+        email: string,
+        rating: number,
+        image: string
+      }
+    }>(this.backendUrl + '/refresh_tokens', {
+      refresh_token: token
+    });
   }
 }
