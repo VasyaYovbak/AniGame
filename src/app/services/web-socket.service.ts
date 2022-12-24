@@ -24,7 +24,7 @@ export class WebSocketService {
   }
 
   emit(eventName: string, data: any) {
-    data = Object.assign({data}, {"access_token": this.cookie.getAuthToken()})
+    data = Object.assign({data}, {"access_token": this.cookie.getAccessToken()})
     this.socket.emit(eventName, data);
   }
 

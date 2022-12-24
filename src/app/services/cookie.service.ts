@@ -1,9 +1,12 @@
 import {Injectable} from '@angular/core';
+import {JwtHelperService} from "@auth0/angular-jwt";
 
 @Injectable({
   providedIn: 'root'
 })
 export class CookieService {
+  accessTokenExpiration: number = 3;
+  refreshTokenExpiration = 12 * 60;
 
   constructor() {
   }
@@ -36,7 +39,31 @@ export class CookieService {
     document.cookie = name + '=' + '' + expires + '; path=/';
   }
 
-  getAuthToken() {
+  getAccessToken() {
     return this.getCookie('access_token');
+  }
+
+  getRefreshToken() {
+    return this.getCookie('refresh_token');
+  }
+
+  getUserData(){
+    return this.getCookie('self')
+  }
+
+  isAuthenticated() {
+    return this.getAccessToken() && this.getRefreshToken()
+  }
+
+  setAllAuthCookies(access: String | undefined, refresh: String | undefined, userData: string) {
+    this.setCookie("access_token", String(access), this.accessTokenExpiration);
+    this.setCookie("refresh_token", String(refresh), this.refreshTokenExpiration);
+    this.setCookie('self', userData, this.refreshTokenExpiration);
+  }
+
+  clearAllAuthCookies(){
+    this.clearCookie('access_token');
+    this.clearCookie('refresh_token');
+    this.clearCookie('self');
   }
 }
