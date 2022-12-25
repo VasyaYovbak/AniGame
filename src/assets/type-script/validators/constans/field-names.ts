@@ -1,3 +1,3 @@
-export const email = 'email';
-export const password = 'password';
-export const username = 'username'
+export const email: string = 'email';
+export const password: string = 'password';
+export const username: string = 'username'
