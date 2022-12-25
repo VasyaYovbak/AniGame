@@ -5,7 +5,7 @@
 
       <label for="email"></label>
       <input class="common-input" type="text" name="email" id='email' placeholder="Email" formControlName="email"
-             maxlength="256">
+             maxlength="200">
       <app-client-validation [form]="registrationForm" [fieldName]="'email'"
                              class="validation-error"></app-client-validation>
 
@@ -28,6 +28,7 @@
       </div>
       <app-client-validation [form]="registrationForm" fieldName="password"
                              class="validation-error"></app-client-validation>
+      <p class="server-error validation-error">{{serverErrorMessage}}</p>
       <button class="btn">Sign Up</button>
       <p>Already have an account? <a routerLink="/login">Sign In</a></p>
     </form>

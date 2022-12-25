@@ -3,11 +3,12 @@
     <p class="auth-header-text">Login</p>
     <form class="login-form common-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
       <label for="email"></label>
-      <input class="common-input" type="text" name="email" id="email" formControlName="email" placeholder="Email" maxlength="256">
+      <input class="common-input" type="text" name="email" id="email" formControlName="email" placeholder="Email" maxlength="200">
       <app-client-validation [form]="loginForm" [fieldName]="'email'" class="validation-error"></app-client-validation>
       <label for="password"></label>
       <input class="common-input" type="password" name="password" id="password" formControlName="password" placeholder="Password" maxlength="36">
       <app-client-validation [form]="loginForm" fieldName="password" class="validation-error"></app-client-validation>
+      <p class="server-error validation-error">{{serverErrorMessage}}</p>
       <button class="btn">Login</button>
       <p>Don't have an account?<a routerLink="/registration">Sign Up</a></p>
     </form>
