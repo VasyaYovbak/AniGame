@@ -70,6 +70,15 @@
 
       .validation-error {
         color: $red-background;
+        @media only screen and (max-width: 320px) {
+          font-size: 8px;
+        }
+        @media only screen and (min-width: 320px) and (max-width: 600px) {
+          font-size: 10px;
+        }
+        @media only screen and (min-width: 600px) and (max-width: 768px) {
+          font-size: 12px;
+        }
       }
     }
   }

@@ -25,6 +25,7 @@ import {MatMenuModule} from "@angular/material/menu";
 import { ClientValidationComponent } from './components/client-validation/client-validation.component';
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
+import { ComingSoonComponent } from './components/coming-soon/coming-soon.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import {MatInputModule} from "@angular/material/input";
     LeaderboardComponent,
     TableComponent,
     ClientValidationComponent,
+    ComingSoonComponent,
   ],
     imports: [
         BrowserModule,
