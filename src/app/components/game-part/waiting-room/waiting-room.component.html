@@ -1,10 +1,58 @@
 <div class="container">
-  <button (click)="request()" *ngIf="!isSearching" class="btn">
-    Find Opponent
-  </button>
-  <button class="btn" (click)="createRoom()">
-    Create
-  </button>
-
+<!--  <button (click)="request()" *ngIf="!isSearching" class="btn">-->
+<!--    Find Opponent-->
+<!--  </button>-->
   <app-rooms-grid class="rooms-grid"></app-rooms-grid>
+  <div class="aside">
+
+<!--    <button class="btn" (click)="createRoom()">-->
+<!--&lt;!&ndash;      Maybe play with friends I am not sure&ndash;&gt;-->
+<!--      Create-->
+<!--    </button>-->
+    <div class="news-tab">
+      <mat-tab-group>
+        <mat-tab label="Sponsors" class="tabs">
+          <div class="tabs-content">
+            <img src="assets/sponsors-placeholder.jpg" alt="Possible sponsor's photo" class="sponsors-image">
+            <p>Here can be your product</p>
+          </div>
+
+<!--          Fix such behaviour:-->
+<!--          <p>Here can be your product</p>-->
+<!--          <p>Here can be your product</p>-->
+<!--          <p>Here can be your product</p>-->
+<!--          <p>Here can be your product</p>-->
+<!--          <p>Here can be your product</p>-->
+<!--          <p>Here can be your product</p>-->
+<!--          <p>Here can be your product</p>-->
+<!--          <p>Here can be your product</p>-->
+<!--          <p>Here can be your product</p>-->
+<!--          <p>Here can be your product</p>-->
+<!--          <p>Here can be your product</p>-->
+<!--          <p>Here can be your product</p>-->
+<!--          <p>Here can be your product</p>-->
+<!--          <p>Here can be your product</p>-->
+        </mat-tab>
+        <mat-tab label="News" class="tabs">
+<!--          Delete later-->
+          <div class="tabs-content">
+            <img src="assets/news-image.jpg" alt="News photo" class="news-image">
+            <p class="news-text">Merry Christmas and happy new Year</p>
+          </div>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+
+    <div class="buttons-wrapper">
+      <button class="btn" (click)="createRoom()">
+        Create Game
+      </button>
+      <button class="btn" (click)="comingSoon()">
+        Join random game
+      </button>
+      <button class="btn" (click)="comingSoon()">
+        Play with computer
+      </button>
+    </div>
+  </div>
 </div>

@@ -7,6 +7,8 @@ export const NarutoTheme: Theme = {
   name: "NarutoTheme",
   properties: {
     "--primary-image": 'url(assets/primary-images/naruto-and-sasuke.png) no-repeat fixed center 0',
+    "--primary-button-background": "rgb(177, 27, 62)",
+    "--primary-button-text-color": '#ffffff',
 
     // home images
     "--home-fight-icon-name": "naruto-fight-scene",
@@ -37,6 +39,11 @@ export const NarutoTheme: Theme = {
     "--login-button-text-color": '#ffffff',
     "--login-button-opacity": 0.8,
     "--login-button-hover-opacity": 1,
+
+    // rooms page:
+    "--rooms-button-opacity": 0.9,
+    "--rooms-button-hover-opacity": 1
+
   }
 };
 
@@ -44,6 +51,8 @@ export const BleachTheme: Theme = {
   name: "BleachTheme",
   properties: {
     "--primary-image": 'url(assets/primary-images/bleach.png) no-repeat fixed center 0',
+    "--primary-button-background": "#3A3331",
+    "--primary-button-text-color": '#ffffff',
 
     // home images
     "--home-fight-icon-name": "bleach-fight-scene",
@@ -75,6 +84,10 @@ export const BleachTheme: Theme = {
     "--login-button-text-color": '#ffffff',
     "--login-button-opacity": 0.8,
     "--login-button-hover-opacity": 1,
+
+    // rooms page:
+    "--rooms-button-opacity": 0.95,
+    "--rooms-button-hover-opacity": 1,
   }
 };
 
@@ -82,6 +95,8 @@ export const OnePieceTheme: Theme = {
   name: "OnePieceTheme",
   properties: {
     "--primary-image": 'url(assets/primary-images/one-piece.jpg) no-repeat fixed center 0',
+    "--primary-button-background": "#891211",
+    "--primary-button-text-color": '#ffffff',
 
     // home images
     "--home-fight-icon-name": "one-piece-fight-scene",
@@ -113,6 +128,10 @@ export const OnePieceTheme: Theme = {
     "--login-button-text-color": '#ffffff',
     "--login-button-opacity": 0.9,
     "--login-button-hover-opacity": 1,
+
+    // rooms page:
+    "--rooms-button-opacity": 0.9,
+    "--rooms-button-hover-opacity": 1,
   }
 };
 
@@ -121,6 +140,8 @@ export const VagabondTheme: Theme = {
   name: "VagabondTheme",
   properties: {
     "--primary-image": 'url(assets/primary-images/vagabond.jpg) no-repeat fixed center 0',
+    "--primary-button-background": "#27336F",
+    "--primary-button-text-color": '#ffffff',
 
     // home images
     "--home-fight-icon-name": "vagabond-fight-scene",
@@ -152,6 +173,10 @@ export const VagabondTheme: Theme = {
     "--login-button-text-color": '#ffffff',
     "--login-button-opacity": 0.7,
     "--login-button-hover-opacity": 1,
+
+    // rooms page:
+    "--rooms-button-opacity": 0.9,
+    "--rooms-button-hover-opacity": 1,
   }
 };
 
@@ -159,6 +184,9 @@ export const FateStayNightTheme: Theme = {
   name: "FateStayNightTheme",
   properties: {
     "--primary-image": 'url(assets/primary-images/fate-stay-night.jpg) no-repeat fixed center 0',
+    "--primary-button-background": "#dfe0ba",
+    "--primary-button-text-color": '#000000',
+
     // home page:
 
     // home images
@@ -191,6 +219,10 @@ export const FateStayNightTheme: Theme = {
     "--login-button-text-color": '#ffffff',
     "--login-button-opacity": 0.8,
     "--login-button-hover-opacity": 1,
+
+    // rooms page:
+    "--rooms-button-opacity": 0.9,
+    "--rooms-button-hover-opacity": 1,
   }
 };
 

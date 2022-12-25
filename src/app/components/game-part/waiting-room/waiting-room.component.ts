@@ -52,4 +52,8 @@ export class WaitingRoomComponent implements OnInit {
       width: '600px',
     });
   }
+
+  comingSoon() {
+    this.router.navigate(["/coming-soon"])
+  }
 }
