@@ -1,14 +1,16 @@
 @import "../../../../style/variables";
 
 .container {
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
   box-sizing: border-box;
   height: 100vh;
   display: flex;
-  align-items: center;
+  //align-items: center;
   justify-content: center;
-  flex-direction: column;
+  flex-direction: row;
+  gap: 3vw;
+  padding-bottom: 5vh;
 
   .searching {
     display: flex;
@@ -21,24 +23,138 @@
     text-align: center;
   }
 
-  .btn {
-    padding: 15px 110px;
-    font-size: 20px;
-    border-radius: 15px;
-    color: white;
-    background: linear-gradient(to right, $saske-aura, $red-background, $naruto-aura);
-    box-shadow: 0 0 20px $button-light;
-    transition: all .4s;
-    cursor: pointer;
+  .aside {
+    display: flex;
+    flex-direction: column;
+    margin: 30px 0 0 0;
+    gap: 5vh;
+
+    .news-tab {
+      height: 50vh;
+      color: #ffffff;
+      border: #68686e 1.5px solid;
+      background-color: #181d1f;
+    }
+
+    .tabs {
+      max-height: 100%;
+    }
+
+    .tabs-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      padding-top: 10%;
+
+      .sponsors-image {
+        width: 280px;
+        height: 140px;
+
+        // Currently is hardcoded, need to come up with something better!!!
+        @media only screen and (max-width: 320px) {
+          width: 140px;
+          height: 70px;
+        }
+
+        @media only screen and (min-width: 320px) and (max-width: 480px) {
+          width: 140px;
+          height: 70px;
+        }
+      }
+
+      .news-image {
+        // Currently is hardcoded, need to come up with something better!!!(Probably, svg)
+        width: 112.5px;
+        height: 187.25px;
+      }
+
+      .news-text {
+        font-size: 16px;
+
+        @media only screen and (max-width: 320px) {
+          font-size: 5px;
+        }
+
+        @media only screen and (min-width: 320px) and (max-width: 480px) {
+          font-size: 6px;
+        }
+
+        @media only screen and (min-width: 480px) and (max-width: 600px) {
+          font-size: 8px;
+        }
+
+        @media only screen and (min-width: 600px) and (max-width: 768px) {
+          font-size: 12px;
+        }
+
+        @media only screen and (min-width: 768px) and (max-width: 900px) {
+          font-size: 14px;
+        }
+
+      }
+    }
+
+    .buttons-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 3vh;
+    }
+
+    .btn {
+      padding: 10px 90px;
+      font-size: 20px;
+      white-space: nowrap;
+      border-radius: 15px;
+      color: var(--primary-button-text-color);
+      opacity: var(--rooms-button-opacity);
+      background: var(--primary-button-background);
+      transition: all .4s;
+
+      @media only screen and (max-width: 320px) {
+        font-size: 5px;
+        padding: 5px 20px;
+      }
+
+      @media only screen and (min-width: 320px) and (max-width: 480px) {
+        font-size: 6px;
+        padding: 4px 30px;
+      }
+
+      @media only screen and (min-width: 480px) and (max-width: 600px) {
+        font-size: 8px;
+        padding: 6px 45px;
+      }
+
+      @media only screen and (min-width: 600px) and (max-width: 768px) {
+        font-size: 14px;
+        padding: 8px 55px;
+      }
+
+      @media only screen and (min-width: 768px) and (max-width: 900px) {
+        font-size: 16px;
+        padding: 9px 60px;
+      }
+
+      @media only screen and (min-width: 900px) and (max-width: 1200px) {
+        font-size: 18px;
+        padding: 10px 70px;
+      }
+    }
+
+    .btn:hover {
+      opacity: var(--rooms-button-hover-opacity);
+      cursor: pointer;
+    }
   }
 
-  .btn:hover {
-    box-shadow: 0 0 40px $button-light;
+  .rooms-grid {
+    display: flex;
+    width: 100%;
+    height: 95%;
   }
 }
 
-.rooms-grid {
-  display: flex;
-  width: 100%;
-  height: 60%;
-}
+//.mat-tab-labels {
+//  justify-content: space-between;
+//}

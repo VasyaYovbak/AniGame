@@ -1,0 +1,71 @@
+@import "../../../style/variables.scss";
+@import "../../../style/mixins.scss";
+
+.common-section {
+  padding-top: 50px;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+
+    .image-wrapper {
+      display: flex;
+      justify-content: center;
+    }
+
+    .coming-soon-image {
+      width: 470px;
+      height: 404px;
+
+      @media only screen and (max-width: 320px) {
+        width: 235px;
+        height: 202px;
+      }
+
+      @media only screen and (min-width: 320px) and (max-width: 480px) {
+        width: 235px;
+        height: 202px;
+      }
+      @media only screen and (min-width: 480px) and (max-width: 600px) {
+        width: 352.5px;
+        height: 303px;
+      }
+    }
+
+    .coming-soon-description {
+      text-align: center;
+      font-size: 24px;
+      font-family: var(--home-card-image-texts-font-family);
+
+      @include stroked-text(var(--home-card-image-text-color),
+        var(--home-card-image-text-stroke-width),
+        var(--home-card-image-text-stroke-color));
+
+      @media only screen and (max-width: 320px) {
+        font-size: 10px;
+      }
+
+      @media only screen and (min-width: 320px) and (max-width: 480px) {
+        font-size: 14px;
+      }
+
+      @media only screen and (min-width: 480px) and (max-width: 600px) {
+        font-size: 16px;
+      }
+
+      @media only screen and (min-width: 600px) and (max-width: 768px) {
+        font-size: 18px;
+      }
+
+      @media only screen and (min-width: 768px) and (max-width: 900px) {
+        font-size: 20px;
+      }
+
+      @media only screen and (min-width: 900px) and (max-width: 1200px) {
+        font-size: 22px;
+      }
+    }
+  }
+
+}
