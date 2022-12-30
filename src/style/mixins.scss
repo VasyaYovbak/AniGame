@@ -3,3 +3,9 @@
   -webkit-text-stroke-width: $text-stroke-width-value;
   -webkit-text-stroke-color: $text-stroke-color-value;
 }
+
+@mixin svg-icon-size($svg-icon-width, $svg-icon-height, $svg-icon-font-size) {
+  width: $svg-icon-width;
+  height: $svg-icon-height;
+  font-size: $svg-icon-font-size;
+}

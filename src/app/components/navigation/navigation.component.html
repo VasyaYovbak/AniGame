@@ -6,10 +6,10 @@
     <li class="nav-element" routerLink="/game/search">
       Games
     </li>
-    <li class="nav-element" routerLink="/profile/{{userId}}">
-      MyProfile
-    </li>
-<!--    <li class="nav-element" routerLink="/leaderboard">-->
+    <!--    <li class="nav-element" routerLink="/profile/{{userId}}">-->
+    <!--      MyProfile-->
+    <!--    </li>-->
+    <!--    <li class="nav-element" routerLink="/leaderboard">-->
     <li class="nav-element" routerLink="/coming-soon">
       Leaderboard
     </li>
@@ -20,14 +20,17 @@
     <li class="auth-button nav-element" id="login" *ngIf="!this.cookie.getRefreshToken()">
       <a routerLink="/login">Login</a>
     </li>
-    <li class="auth-button  nav-element" id="logout" *ngIf="this.cookie.getRefreshToken()" (click)="logout()">
-      <p>Logout</p>
+
+    <li class="auth-button  nav-element profile-icon-wrapper" id="logout" *ngIf="this.cookie.getRefreshToken()">
+      <button mat-icon-button [matMenuTriggerFor]="profileMenu" aria-label="Profile menu">
+        <mat-icon svgIcon="profile-icon" class="profile-icon"></mat-icon>
+      </button>
     </li>
+
   </ul>
 </nav>
 
-<mat-menu #themeMenu
->
+<mat-menu #themeMenu>
   <div class="circle-wrapper">
     <app-circle-selector
       [states]="themeStates"
@@ -36,3 +39,32 @@
     ></app-circle-selector>
   </div>
 </mat-menu>
+
+<mat-menu #profileMenu class="profile-menu" [ngClass]="'profile-menu'">
+  <div class="menu-buttons-wrapper">
+    <button mat-menu-item routerLink="/profile/{{userId}}" class="menu-button profile-menu-button">
+      <mat-icon [svgIcon]="'flame-profile-icon'" class="flame-profile-icon"></mat-icon>
+      <span class="menu-text">Profile</span>
+    </button>
+
+    <mat-divider class="mat-devider"></mat-divider>
+
+    <button mat-menu-item routerLink="coming-soon" class="menu-button settings-button">
+      <mat-icon class="settings-icon" [svgIcon]="'settings-icon'"></mat-icon>
+      <span class="menu-text">
+      Settings
+    </span>
+
+    </button>
+
+    <mat-divider class="mat-devider"></mat-divider>
+
+    <button mat-menu-item (click)="logout()" class="menu-button logout-button">
+      <mat-icon [svgIcon]="'logout-icon'" class="logout-icon"></mat-icon>
+      <span class="menu-text">
+      Logout
+    </span>
+    </button>
+  </div>
+</mat-menu>
+

@@ -26,6 +26,7 @@ import { ClientValidationComponent } from './components/client-validation/client
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import { ComingSoonComponent } from './components/coming-soon/coming-soon.component';
+import {MatDividerModule} from "@angular/material/divider";
 
 @NgModule({
   declarations: [
@@ -40,21 +41,22 @@ import { ComingSoonComponent } from './components/coming-soon/coming-soon.compon
     ClientValidationComponent,
     ComingSoonComponent,
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        ReactiveFormsModule,
-        FormsModule,
-        HttpClientModule,
-        GameModule,
-        BrowserAnimationsModule,
-        MatIconModule,
-        MatButtonModule,
-        CircleSelectorModule,
-        MatMenuModule,
-        MatFormFieldModule,
-        MatInputModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
+    HttpClientModule,
+    GameModule,
+    BrowserAnimationsModule,
+    MatIconModule,
+    MatButtonModule,
+    CircleSelectorModule,
+    MatMenuModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatDividerModule
+  ],
   providers: [CookieService, AuthorizationService, AuthGuard,
     {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true}],
   bootstrap: [AppComponent]
