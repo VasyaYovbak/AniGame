@@ -29,19 +29,30 @@ export class AppComponent {
       {name: 'vagabond-achievement', url: 'assets/themes/vagabond/icons/achievement.svg'},
       {name: 'vagabond-lore', url: 'assets/themes/vagabond/icons/lore.svg'}];
 
-    let FateStayNightIcons = [{name: 'fate-stay-night-fight-scene', url: 'assets/themes/fate-stay-night/icons/fight-scene.svg'},
+    let FateStayNightIcons = [{
+      name: 'fate-stay-night-fight-scene',
+      url: 'assets/themes/fate-stay-night/icons/fight-scene.svg'
+    },
       {name: 'fate-stay-night-achievement', url: 'assets/themes/fate-stay-night/icons/achievement.svg'},
       {name: 'fate-stay-night-lore', url: 'assets/themes/fate-stay-night/icons/lore.svg'}]
 
-    let CommonIcons = [{name: 'ani-game-logo', url: 'assets/ani-game-logo.svg'}]
+    let CommonIcons = [{name: 'ani-game-logo', url: 'assets/ani-game-logo.svg'},
+      {name: 'profile-icon', url: 'assets/profile-icon.svg'},
+      {name: 'flame-profile-icon', url: 'assets/flame-profile-icon.svg'},
+      {name: 'logout-icon', url: 'assets/logout-icon.svg'},
+      {name: 'settings-icon', url: 'assets/settings-icon.svg'}
+    ]
 
     let customIcons: Array<{ name: string, url: string }> =
-      [...CommonIcons,
+      [
+        ...CommonIcons,
+        // theme icons:
         ...narutoThemeIcons,
         ...bleachThemeIcons,
         ...onePieceThemeIcons,
         ...vagabondThemeIcons,
-        ...FateStayNightIcons];
+        ...FateStayNightIcons
+      ];
 
     for (let i = 0; i < customIcons.length; i++) {
       let currentIcon = customIcons[i];

@@ -10,6 +10,11 @@ export const NarutoTheme: Theme = {
     "--primary-button-background": "rgb(177, 27, 62)",
     "--primary-button-text-color": '#ffffff',
 
+    // navigation
+    "--themes-text-color": "#ffffff",
+    "--profile-icon-color": "#ffffff",
+    "--flame-hair-color": "#9b00b8",
+
     // home images
     "--home-fight-icon-name": "naruto-fight-scene",
     "--home-achievement-icon-name": "naruto-achievement",
@@ -54,6 +59,11 @@ export const BleachTheme: Theme = {
     "--primary-button-background": "#3A3331",
     "--primary-button-text-color": '#ffffff',
 
+    // navigation
+    "--themes-text-color": "#000000",
+    "--profile-icon-color": "#000000",
+    "--flame-hair-color": "#f19218",
+
     // home images
     "--home-fight-icon-name": "bleach-fight-scene",
     "--home-achievement-icon-name": "bleach-achievement",
@@ -97,6 +107,11 @@ export const OnePieceTheme: Theme = {
     "--primary-image": 'url(assets/primary-images/one-piece.jpg) no-repeat fixed center 0',
     "--primary-button-background": "#891211",
     "--primary-button-text-color": '#ffffff',
+
+    // navigation
+    "--themes-text-color": "#f0e8d3",
+    "--profile-icon-color": "#f0e8d3",
+    "--flame-hair-color": "#a40e04",
 
     // home images
     "--home-fight-icon-name": "one-piece-fight-scene",
@@ -143,6 +158,11 @@ export const VagabondTheme: Theme = {
     "--primary-button-background": "#27336F",
     "--primary-button-text-color": '#ffffff',
 
+    // navigation
+    "--themes-text-color": "#ffffff",
+    "--profile-icon-color": "#ffffff",
+    "--flame-hair-color": "#18A5FE",
+
     // home images
     "--home-fight-icon-name": "vagabond-fight-scene",
     "--home-achievement-icon-name": "vagabond-achievement",
@@ -186,6 +206,10 @@ export const FateStayNightTheme: Theme = {
     "--primary-image": 'url(assets/primary-images/fate-stay-night.jpg) no-repeat fixed center 0',
     "--primary-button-background": "#dfe0ba",
     "--primary-button-text-color": '#000000',
+    // navigation
+    "--themes-text-color": "#ffffff",
+    "--profile-icon-color": "#ffffff",
+    "--flame-hair-color": "#ea5104",
 
     // home page:
 
