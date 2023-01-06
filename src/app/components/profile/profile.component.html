@@ -1,17 +1,57 @@
 <div class="profile" *ngIf="profile">
-  <div class="user-data">
-    <div class="image">
-      <img [src]="profile.user_info.image ? profile.user_info.image:'../../assets/img_b.png'" alt="profile image">
+  <div class="profile-inner-wrapper">
+    <div class="user-data-wrapper common-container">
+      <div class="user-data">
+        <div class="image">
+          <ng-container *ngIf="profile.user_info.image">
+            <img [src]="profile.user_info.image ? profile.user_info.image:'../../assets/default-profile-image-icon.jpg'"
+                 class="profile-image" alt="profile image" >
+          </ng-container>
+          <ng-container *ngIf="!profile.user_info.image">
+            <mat-icon [svgIcon]="'default-user-profile-image'" class="default-image-icon"></mat-icon>
+          </ng-container>
+
+
+          <!--        <mat-icon class="edit-button">edit</mat-icon>-->
+        </div>
+        <div class="user">
+          <div class="inner-user">
+            <p class="user-info-text name">{{profile.user_info.username}}</p>
+            <p class="user-info-text email">{{profile.user_info.email}}</p>
+          </div>
+        </div>
+
+      </div>
     </div>
-    <div class="user">
-      <p class="name">{{profile.user_info.username}}</p>
-      <p>{{profile.user_info.email}}</p>
+
+    <div class="buttons-wrapper">
+      <button class="profile-button" [routerLink]="['/coming-soon']">Edit Profile</button>
+      <button class="profile-button" [routerLink]="['/coming-soon']">Settings</button>
+      <button class="profile-button" [routerLink]="['/coming-soon']">Games History</button>
     </div>
   </div>
-  <div class="games" *ngIf="profile.games">
-    <p>Previous Games</p>
-    <app-table [columns]="['game_id','winner','loser','date']" [data]="profile.games">
-    </app-table>
-  </div>
+
+
+  <!--  <ag-grid-angular-->
+  <!--    style="width: 100%; height: 100%"-->
+  <!--    class="ag-theme-alpine-dark room-grid"-->
+  <!--    [columnDefs]="columnDefs"-->
+  <!--    [defaultColDef]="defaultColDef"-->
+  <!--    [rowData]="rowData"-->
+  <!--    [rowSelection]="'multiple'"-->
+  <!--    [animateRows]="true"-->
+  <!--    [getRowId]="getRowId"-->
+  <!--    [rowHeight]="50"-->
+  <!--    (gridReady)="onGridReady($event)"-->
+  <!--    (rowClicked)="onRowClicked($event)">-->
+  <!--  </ag-grid-angular>-->
+
+
+  <app-games-analytics></app-games-analytics>
+  <!--  <div class="games" *ngIf="profile.games">-->
+  <!--    <p>Previous Games</p>-->
+  <!--    <app-table [columns]="['game_id','winner','loser','date']" [data]="profile.games">-->
+  <!--    </app-table>-->
+  <!--  </div>-->
 </div>
 

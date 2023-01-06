@@ -1,0 +1,60 @@
+.charts-wrapper {
+  width: 75vw;
+  display: flex;
+  //background-color: #181d1f;
+  @media only screen and (max-width: 320px) {
+    width: 60vw;
+  }
+  @media only screen and (min-width: 320px) and (max-width: 480px) {
+    width: 70vw;
+  }
+  @media only screen and (min-width: 480px) and (max-width: 600px) {
+  }
+  @media only screen and (min-width: 600px) and (max-width: 768px) {
+  }
+
+  .line-chart-wrapper {
+    //width: 10%;
+    width: 95%;
+  }
+
+  .line-chart {
+    //width: 80%;
+  }
+
+  .charts-switcher {
+    margin: 2% 0 0 0;
+  }
+
+  .charts-menu-icon:hover {
+    cursor: pointer;
+  }
+
+
+}
+
+.charts-menu-icon-wrapper {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+
+  .charts-menu-charts-icon {
+    fill: #ffffff;
+    font-size: 40px;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.charts-menu-buttons-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  .charts-menu-buttons-inner-wrapper {
+    width: 95%;
+  }
+}

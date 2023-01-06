@@ -47,8 +47,17 @@ export const NarutoTheme: Theme = {
 
     // rooms page:
     "--rooms-button-opacity": 0.9,
-    "--rooms-button-hover-opacity": 1
+    "--rooms-button-hover-opacity": 1,
 
+    // profile page:
+    "--profile-button-opacity": 0.9,
+    "--profile-button-hover-opacity": 1,
+
+    // line charts:
+    "--chart-line-color": "#9b00b8",
+    "--chart-point-color": "rgb(177, 27, 62)",
+    "--chart-point-border-color": "rgb(177, 27, 62)",
+    "--chart-point-hover-color": "#000000",
   }
 };
 
@@ -98,6 +107,16 @@ export const BleachTheme: Theme = {
     // rooms page:
     "--rooms-button-opacity": 0.95,
     "--rooms-button-hover-opacity": 1,
+
+    // profile page:
+    "--profile-button-opacity": 0.85,
+    "--profile-button-hover-opacity": 1,
+
+    // line charts:
+    "--chart-line-color": "#f19218",
+    "--chart-point-color": "#000000",
+    "--chart-point-border-color": "#ffffff",
+    "--chart-point-hover-color": "#f19218",
   }
 };
 
@@ -147,6 +166,16 @@ export const OnePieceTheme: Theme = {
     // rooms page:
     "--rooms-button-opacity": 0.9,
     "--rooms-button-hover-opacity": 1,
+
+    // profile page:
+    "--profile-button-opacity": 0.8,
+    "--profile-button-hover-opacity": 1,
+
+    // line charts:
+    "--chart-line-color": "#891211",
+    "--chart-point-color": "#ffffff",
+    "--chart-point-border-color": "#891211",
+    "--chart-point-hover-color": "#e7b638",
   }
 };
 
@@ -197,6 +226,16 @@ export const VagabondTheme: Theme = {
     // rooms page:
     "--rooms-button-opacity": 0.9,
     "--rooms-button-hover-opacity": 1,
+
+    // profile page:
+    "--profile-button-opacity": 0.9,
+    "--profile-button-hover-opacity": 1,
+
+    // line charts:
+    "--chart-line-color": "#18A5FE",
+    "--chart-point-color": "#ffffff",
+    "--chart-point-border-color": "#27336F",
+    "--chart-point-hover-color": "#ffffff",
   }
 };
 
@@ -247,6 +286,16 @@ export const FateStayNightTheme: Theme = {
     // rooms page:
     "--rooms-button-opacity": 0.9,
     "--rooms-button-hover-opacity": 1,
+
+    // profile page:
+    "--profile-button-opacity": 0.8,
+    "--profile-button-hover-opacity": 1,
+
+    // line charts:
+    "--chart-line-color": "#ff5a00",
+    "--chart-point-color": "#f4f5c2",
+    "--chart-point-border-color": "#f4f5c2",
+    "--chart-point-hover-color": "#000000",
   }
 };
 

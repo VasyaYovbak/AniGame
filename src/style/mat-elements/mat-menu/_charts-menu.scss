@@ -1,0 +1,17 @@
+.charts-menu {
+  background: #181d1f;
+  box-shadow: none;
+  width: 350px;
+  height: 200px;
+
+  .charts-menu-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+  }
+
+  .mat-devider {
+    border-top-color: #ffffff;
+  }
+}

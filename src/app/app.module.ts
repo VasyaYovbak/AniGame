@@ -27,6 +27,10 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import { ComingSoonComponent } from './components/coming-soon/coming-soon.component';
 import {MatDividerModule} from "@angular/material/divider";
+import {NgChartsModule} from "ng2-charts";
+import { GamesAnalyticsComponent } from './components/profile/games-analytics/games-analytics.component';
+import {ProfileModule} from "./components/profile/profile.module";
+import {CommonModule} from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -42,6 +46,7 @@ import {MatDividerModule} from "@angular/material/divider";
     ComingSoonComponent,
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
@@ -55,7 +60,9 @@ import {MatDividerModule} from "@angular/material/divider";
     MatMenuModule,
     MatFormFieldModule,
     MatInputModule,
-    MatDividerModule
+    MatDividerModule,
+    NgChartsModule,
+    ProfileModule,
   ],
   providers: [CookieService, AuthorizationService, AuthGuard,
     {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true}],

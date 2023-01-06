@@ -7,14 +7,19 @@ import {
   Theme,
   VagabondTheme
 } from "../../assets/type-script/interfaces/ThemeInterface";
+import {Subject, Subscription} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ThemeService {
+  getThemeUpdateSubscription(callback: any): Subscription {
+    return this._themeUpdateSubject.subscribe(callback);
+  }
   set active(value: Theme) {
     this._active = value;
   }
+  private _themeUpdateSubject: Subject<Theme> = new Subject<Theme>();
   private _active: Theme;
   private _availableThemes: Theme[] = [NarutoTheme, OnePieceTheme, FateStayNightTheme, BleachTheme, VagabondTheme];
 
@@ -58,5 +63,6 @@ export class ThemeService {
         this._active.properties[property]
       );
     });
+    this._themeUpdateSubject.next(this._active);
   }
 }
