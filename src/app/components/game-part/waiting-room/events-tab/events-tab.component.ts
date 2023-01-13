@@ -1,7 +1,7 @@
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
-import SwiperCore, {Pagination,Autoplay, SwiperOptions,Navigation } from "swiper";
+import SwiperCore, {Pagination, Autoplay, SwiperOptions, Navigation} from "swiper";
 
-SwiperCore.use([Pagination, Autoplay,Navigation]);
+SwiperCore.use([Pagination, Autoplay, Navigation]);
 
 @Component({
   selector: 'app-events-tab',
@@ -16,18 +16,27 @@ export class EventsTabComponent implements OnInit {
     //   nextEl:'.next',
     // },
     slidesPerView: 1,
-    pagination:true,
+    pagination: true,
     // pagination:{type:"progressbar"},
-    spaceBetween:30,
-    loop:true,
-    autoplay:{
-      delay:4000,
+    spaceBetween: 30,
+    loop: true,
+    autoplay: {
+      delay: 4000,
     },
-    preventClicks:false,
-    preventClicksPropagation:false
+    preventClicks: false,
+    preventClicksPropagation: false
   };
+  sponsors = [{
+    img: "assets/sponsors-placeholder.jpg",
+    description: "Here can be your product"
+    },
+    {
+      img: "assets/sponsors-placeholder.jpg",
+      description: "Here can be your product"
+    }];
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
