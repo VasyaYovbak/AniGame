@@ -2,7 +2,7 @@
   <!--  <button (click)="request()" *ngIf="!isSearching" class="btn">-->
   <!--    Find Opponent-->
   <!--  </button>-->
-  <app-rooms-grid class="rooms-grid"></app-rooms-grid>
+  <app-rooms-grid class="rooms-grid" (shareRowData)="onDataChange($event)" ></app-rooms-grid>
   <div class="aside">
 
     <!--    <button class="btn" (click)="createRoom()">-->
@@ -17,7 +17,7 @@
       <button class="btn" (click)="createRoom()">
         Create Game
       </button>
-      <button class="btn" (click)="comingSoon()">
+      <button class="btn" (click)="randomRoom()">
         Join random game
       </button>
       <button class="btn" (click)="comingSoon()">

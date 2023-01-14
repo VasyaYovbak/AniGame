@@ -1,5 +1,12 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
-import {ColDef, GetRowIdFunc, GridApi, GridReadyEvent, RowClickedEvent, RowDataTransaction} from "ag-grid-community";
+import {Component, EventEmitter, OnDestroy, OnInit, Output} from '@angular/core';
+import {
+  ColDef,
+  GetRowIdFunc,
+  GridApi,
+  GridReadyEvent,
+  RowClickedEvent,
+  RowDataTransaction
+} from "ag-grid-community";
 import {RoomsService} from "../../rooms.service";
 import {getColumnDefs} from "./rooms.coldef";
 import {Router} from "@angular/router";
@@ -21,6 +28,8 @@ export class RoomsGridComponent implements OnInit, OnDestroy {
     filter: true,
   };
 
+  @Output() shareRowData = new EventEmitter<any>();
+
   rowData: any[] = [];
 
   roomSubscriber: any;
@@ -40,10 +49,10 @@ export class RoomsGridComponent implements OnInit, OnDestroy {
     this.gridApi = params.api
 
     this.roomSubscriber = this._roomsService.getRoomsStream().subscribe((transaction: RowDataTransaction) => {
-      console.log(transaction);
+      // console.log(transaction);
       this.gridApi.applyTransaction(transaction)
+      this.shareRowData.emit(this.gridApi.getRenderedNodes())
     });
-    console.log("geeee");
     this._roomsService.getRooms();
   }
 
@@ -55,6 +64,5 @@ export class RoomsGridComponent implements OnInit, OnDestroy {
     console.log('RowClickedEvent', e);
     this.router.navigate([`room/${e.data.room_id}`])
   }
-
 
 }

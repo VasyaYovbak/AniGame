@@ -12,6 +12,8 @@ import {CreateRoomDialogComponent} from "./create-room-dialog/create-room-dialog
 })
 export class WaitingRoomComponent implements OnInit {
 
+  rows:any=[];
+
   isSearching = false;
 
   constructor(private gameService: GameService, private router: Router, private _roomsService: RoomsService, public dialog: MatDialog) {
@@ -55,5 +57,16 @@ export class WaitingRoomComponent implements OnInit {
 
   comingSoon() {
     this.router.navigate(["/coming-soon"])
+  }
+
+  onDataChange(rowData: any) {
+    this.rows=rowData;
+    console.log("ya lox",this.rows)
+  }
+
+  randomRoom() {
+    let id = Math.floor(Math.random() * this.rows.length);
+
+    this.router.navigate([`room/${this.rows[id].id}`])
   }
 }
