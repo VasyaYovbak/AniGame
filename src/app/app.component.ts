@@ -40,7 +40,8 @@ export class AppComponent {
       {name: 'profile-icon', url: 'assets/profile-icon.svg'},
       {name: 'flame-profile-icon', url: 'assets/flame-profile-icon.svg'},
       {name: 'logout-icon', url: 'assets/logout-icon.svg'},
-      {name: 'settings-icon', url: 'assets/settings-icon.svg'}
+      {name: 'settings-icon', url: 'assets/settings-icon.svg'},
+      {name: 'default-user-profile-image', url: 'assets/default-profile-image-icon.svg'},
     ]
 
     let customIcons: Array<{ name: string, url: string }> =
