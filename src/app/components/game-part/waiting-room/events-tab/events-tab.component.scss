@@ -1,0 +1,101 @@
+@import "~swiper/swiper-bundle.css";
+
+.tabs {
+  max-height: 100%;
+}
+
+.mat-tab-group {
+  height: 100%;
+
+  .mat-tab-label-container {
+    width: 100%;
+  }
+
+  .mat-tab-list {
+    width: 100%;
+  }
+
+  .mat-tab-label {
+    min-width: 0;
+    width: 50%;
+  }
+}
+
+.mat-tab-body-wrapper {
+  position: relative;
+
+  .tabs-content {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+
+    .swiper {
+      display: flex;
+      flex-direction: column-reverse;
+      width: 100%;
+
+      .swiper-slide {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+      }
+
+      .swiper-pagination {
+        top: 0;
+        height: 20px;
+        bottom: 0;
+      }
+
+      .swiper-pagination-bullet {
+        opacity: 0.7;
+        background: #68686e;;
+      }
+
+      .swiper-pagination-bullet-active {
+        opacity: 0.7;
+        background: #007aff;
+      }
+
+    }
+
+    .sponsors-image {
+      width: 90%;
+      height: auto;
+    }
+
+    .news-image {
+      width: 112.5px;
+      height: 187.25px;
+    }
+
+    .news-text {
+      font-size: 14px;
+
+      @media only screen and (max-width: 320px) {
+        font-size: 5px;
+      }
+
+      @media only screen and (min-width: 320px) and (max-width: 480px) {
+        font-size: 6px;
+      }
+
+      @media only screen and (min-width: 480px) and (max-width: 600px) {
+        font-size: 8px;
+      }
+
+      @media only screen and (min-width: 600px) and (max-width: 768px) {
+        font-size: 12px;
+      }
+
+      @media only screen and (min-width: 768px) and (max-width: 900px) {
+        font-size: 14px;
+      }
+
+    }
+  }
+}
+
+

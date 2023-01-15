@@ -1,0 +1,18 @@
+<mat-tab-group>
+  <mat-tab label="Sponsors" class="tabs">
+    <div class="tabs-content">
+      <swiper direction="horizontal" [config]="config"  class="mySwiper" >
+        <ng-template swiperSlide *ngFor="let sponsor of sponsors">
+          <img src="{{sponsor.img}}" alt="Possible sponsor's photo" class="sponsors-image">
+          <p>{{sponsor.description}}</p>
+        </ng-template>
+      </swiper>
+    </div>
+  </mat-tab>
+  <mat-tab label="News" class="tabs">
+    <div class="tabs-content">
+      <img src="assets/news-image.jpg" alt="News photo" class="news-image">
+      <p class="news-text">Merry Christmas and happy new Year</p>
+    </div>
+  </mat-tab>
+</mat-tab-group>
