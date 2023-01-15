@@ -11,23 +11,30 @@ import {CreateRoomDialogComponent} from "./create-room-dialog/create-room-dialog
 import {AgGridModule} from "ag-grid-angular";
 import {RoomsGridModule} from "./rooms-grid/rooms-grid.module";
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
+import {MatTabsModule} from "@angular/material/tabs";
+import {SwiperModule} from "swiper/angular";
+import {EventsTabModule} from "./events-tab/events-tab.module";
 
 
 @NgModule({
   declarations: [WaitingRoomComponent,
-    CreateRoomDialogComponent],
-    imports: [
-        CommonModule,
-        MatDialogModule,
-        MatFormFieldModule,
-        MatInputModule,
-        MatSelectModule,
-        ReactiveFormsModule,
-        MatButtonModule,
-        AgGridModule,
-        RoomsGridModule,
-        MatProgressSpinnerModule
-    ]
+    CreateRoomDialogComponent,
+  ],
+  imports: [
+    CommonModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    ReactiveFormsModule,
+    MatButtonModule,
+    AgGridModule,
+    RoomsGridModule,
+    MatProgressSpinnerModule,
+    MatTabsModule,
+    SwiperModule,
+    EventsTabModule
+  ]
 })
 export class WaitingRoomModule {
 }

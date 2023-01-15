@@ -25,6 +25,12 @@ import {MatMenuModule} from "@angular/material/menu";
 import { ClientValidationComponent } from './components/client-validation/client-validation.component';
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
+import { ComingSoonComponent } from './components/coming-soon/coming-soon.component';
+import {MatDividerModule} from "@angular/material/divider";
+import {NgChartsModule} from "ng2-charts";
+import { GamesAnalyticsComponent } from './components/profile/games-analytics/games-analytics.component';
+import {ProfileModule} from "./components/profile/profile.module";
+import {CommonModule} from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -37,22 +43,27 @@ import {MatInputModule} from "@angular/material/input";
     LeaderboardComponent,
     TableComponent,
     ClientValidationComponent,
+    ComingSoonComponent,
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        ReactiveFormsModule,
-        FormsModule,
-        HttpClientModule,
-        GameModule,
-        BrowserAnimationsModule,
-        MatIconModule,
-        MatButtonModule,
-        CircleSelectorModule,
-        MatMenuModule,
-        MatFormFieldModule,
-        MatInputModule
-    ],
+  imports: [
+    CommonModule,
+    BrowserModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
+    HttpClientModule,
+    GameModule,
+    BrowserAnimationsModule,
+    MatIconModule,
+    MatButtonModule,
+    CircleSelectorModule,
+    MatMenuModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatDividerModule,
+    NgChartsModule,
+    ProfileModule,
+  ],
   providers: [CookieService, AuthorizationService, AuthGuard,
     {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true}],
   bootstrap: [AppComponent]

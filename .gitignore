@@ -41,3 +41,14 @@ testem.log
 .DS_Store
 Thumbs.db
 /.vscode/
+
+# all log files
+*.log*
+
+# firebase
+firebase-debug.log
+.firebaserc
+/.firebase
+
+# gitHub workflow(remove this line when you setup permissions)
+.github

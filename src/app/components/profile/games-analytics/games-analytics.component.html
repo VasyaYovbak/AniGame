@@ -1,0 +1,37 @@
+<div class="common-container charts-wrapper">
+  <div class="line-chart-wrapper">
+    <canvas baseChart class="line-chart"
+            [type]="'line'"
+            [data]="lineChartData"
+            [options]="lineChartOptions"
+            [legend]="lineChartLegend">
+    </canvas>
+  </div>
+  <div class="charts-switcher">
+    <mat-icon class="charts-menu-icon" [matMenuTriggerFor]="analyticsChartsMenu">menu</mat-icon>
+  </div>
+</div>
+
+
+<mat-menu class="charts-menu" #analyticsChartsMenu>
+  <div class="charts-menu-icon-wrapper">
+    <mat-icon class="charts-menu-charts-icon">bar_chart</mat-icon>
+<!--    It may be not only bar chart but some set of icons, and we change icon according to chart we have right now-->
+  </div>
+
+  <div class="charts-menu-buttons-wrapper">
+    <div class="charts-menu-buttons-inner-wrapper">
+<!--      <mat-divider class="mat-devider"></mat-divider>-->
+      <button mat-menu-item class="charts-menu-button" (click)="showActivityChart()">
+        Activity chart
+      </button>
+      <mat-divider class="mat-devider"></mat-divider>
+      <button mat-menu-item class="charts-menu-button" (click)="showRatingChart()">
+        Rating chart
+      </button>
+      <mat-divider class="mat-devider"></mat-divider>
+    </div>
+
+  </div>
+
+</mat-menu>

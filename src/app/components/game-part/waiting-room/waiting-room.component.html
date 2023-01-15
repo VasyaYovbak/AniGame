@@ -1,6 +1,23 @@
 <div class="container">
-  <app-rooms-grid class="rooms-grid" *ngIf="animeList.length" [animeList]="animeList"></app-rooms-grid>
-  <button class="btn" (click)="createRoom()">
-    Create
-  </button>
+
+  <app-rooms-grid class="rooms-grid" *ngIf="animeList.length" [animeList]="animeList"
+                  (shareRowData)="onDataChange($event)"></app-rooms-grid>
+  <div class="aside">
+
+    <div class="news-tab">
+      <app-events-tab></app-events-tab>
+    </div>
+
+    <div class="buttons-wrapper">
+      <button class="btn" (click)="createRoom()">
+        Create Game
+      </button>
+      <button class="btn" (click)="randomRoom()">
+        Join random game
+      </button>
+      <button class="btn" (click)="comingSoon()">
+        Play with computer
+      </button>
+    </div>
+  </div>
 </div>

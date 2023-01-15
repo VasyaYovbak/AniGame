@@ -14,6 +14,8 @@ import {Anime} from "../game.models";
 })
 export class WaitingRoomComponent implements OnInit {
 
+  rows:any=[];
+
   isSearching = false;
   animeList: Anime[] = []
 
@@ -63,5 +65,20 @@ export class WaitingRoomComponent implements OnInit {
       height: '400px',
       width: '600px',
     });
+  }
+
+  comingSoon() {
+    this.router.navigate(["/coming-soon"])
+  }
+
+  onDataChange(rowData: any) {
+    this.rows=rowData;
+    console.log("ya lox",this.rows)
+  }
+
+  randomRoom() {
+    let id = Math.floor(Math.random() * this.rows.length);
+
+    this.router.navigate([`room/${this.rows[id].id}`])
   }
 }

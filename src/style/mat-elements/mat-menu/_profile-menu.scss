@@ -1,0 +1,156 @@
+@import "../../mixins.scss";
+
+.profile-menu {
+  background: #181d1f;
+  box-shadow: none;
+  width: 350px;
+  height: 200px;
+
+
+  @media only screen and (max-width: 320px) {
+    @include svg-icon-size(150px, 200px, 10px);
+  }
+
+  @media only screen and (min-width: 320px) and (max-width: 480px) {
+    @include svg-icon-size(180px, 190px, 12px);
+  }
+
+  @media only screen and (min-width: 480px) and (max-width: 600px) {
+    @include svg-icon-size(225px, 180px, 14px);
+  }
+
+  @media only screen and (min-width: 600px) and (max-width: 768px) {
+    @include svg-icon-size(250px, 190px, 16px);
+  }
+
+  @media only screen and (min-width: 768px) and (max-width: 900px) {
+    @include svg-icon-size(300px, 200px, 18px);
+  }
+
+  @media only screen and (min-width: 900px) and (max-width: 1200px) {
+    width: 300px;
+    height: 200px;
+  }
+
+
+  .mat-devider {
+    border-top-color: #ffffff;
+  }
+
+  .mat-devider:hover {
+    border-top-color: #ffffff;
+  }
+
+  .menu-text {
+    color: white;
+  }
+
+  .profile-menu-button {
+    .flame-profile-icon svg {
+      fill: white;
+      @include svg-icon-size(30px, 30px, 30px);
+
+      @media only screen and (max-width: 320px) {
+        @include svg-icon-size(20px, 20px, 20px);
+      }
+
+      @media only screen and (min-width: 320px) and (max-width: 480px) {
+        @include svg-icon-size(25px, 25px, 25px);
+      }
+    }
+  }
+
+  .profile-menu-button:hover {
+    .flame-profile-icon svg {
+      #hair-flame {
+        fill: var(--flame-hair-color);
+      }
+    }
+  }
+
+
+  .settings-icon svg {
+    fill: white;
+    @include svg-icon-size(30px, 30px, 30px);
+
+    @media only screen and (max-width: 320px) {
+      @include svg-icon-size(20px, 20px, 20px);
+    }
+
+    @media only screen and (min-width: 320px) and (max-width: 480px) {
+      @include svg-icon-size(25px, 25px, 25px);
+    }
+  }
+
+
+  .logout-icon svg {
+    fill: white;
+    @include svg-icon-size(30px, 30px, 30px);
+
+    @media only screen and (max-width: 320px) {
+      @include svg-icon-size(20px, 20px, 20px);
+    }
+
+    @media only screen and (min-width: 320px) and (max-width: 480px) {
+      @include svg-icon-size(24px, 24px, 24px);
+    }
+
+  }
+
+  .menu-button {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 10px 0 10px 0;
+    margin: 0 0 7px 0;
+    font-size: 24px;
+
+    @media only screen and (max-width: 320px) {
+      font-size: 10px;
+    }
+
+    @media only screen and (min-width: 320px) and (max-width: 480px) {
+      font-size: 12px;
+    }
+
+    @media only screen and (min-width: 480px) and (max-width: 600px) {
+      font-size: 14px;
+    }
+
+    @media only screen and (min-width: 600px) and (max-width: 768px) {
+      font-size: 16px;
+    }
+
+    @media only screen and (min-width: 768px) and (max-width: 900px) {
+      font-size: 18px;
+    }
+
+    @media only screen and (min-width: 900px) and (max-width: 1200px) {
+      font-size: 20px;
+    }
+  }
+
+  .menu-buttons-wrapper {
+    padding: 10px;
+  }
+
+  .settings-button:hover {
+    .settings-icon svg {
+      #inner-circle {
+        fill: #696156;
+      }
+    }
+  }
+
+  .logout-button:hover {
+    .logout-icon svg {
+      #arrow {
+        fill: darkorange;
+      }
+    }
+  }
+}
+
+
+
+
