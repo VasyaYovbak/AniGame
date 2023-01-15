@@ -1,7 +1,8 @@
-import {Component} from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
 import {IFilterAngularComp} from "ag-grid-angular";
-import {IDoesFilterPassParams, IFilterParams} from "ag-grid-community";
+import {IAfterGuiAttachedParams, IDoesFilterPassParams, IFilterParams} from "ag-grid-community";
 import {Anime, GameRoom} from "../../../game.models";
+import {MatSelect} from "@angular/material/select";
 
 
 @Component({
@@ -10,6 +11,8 @@ import {Anime, GameRoom} from "../../../game.models";
   styleUrls: ['./anime-grid-filter.component.scss']
 })
 export class AnimeGridFilterComponent implements IFilterAngularComp {
+
+  @ViewChild('animeSelect') animeSelect: MatSelect;
 
   params: IFilterParams;
 
@@ -41,6 +44,10 @@ export class AnimeGridFilterComponent implements IFilterAngularComp {
 
   updateFilter() {
     this.params.filterChangedCallback();
+  }
+
+  afterGuiAttached(params?: IAfterGuiAttachedParams) {
+    this.animeSelect.open();
   }
 
 
