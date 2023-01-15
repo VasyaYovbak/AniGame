@@ -22,7 +22,7 @@ export class RoomsGridComponent implements OnInit, OnDestroy {
   @Input()
   animeList: Anime[]
 
-  private gridApi!: GridApi;
+  @Output() gridReady = new EventEmitter<GridApi>();
 
 
   columnDefs!: ColDef[];
@@ -32,11 +32,11 @@ export class RoomsGridComponent implements OnInit, OnDestroy {
     filter: true,
   };
 
-  @Output() shareRowData = new EventEmitter<any>();
-
   rowData: any[] = [];
 
   roomSubscriber: any;
+
+  private gridApi!: GridApi;
 
   constructor(private _roomsService: RoomsService, private router: Router) {
   }
@@ -51,11 +51,11 @@ export class RoomsGridComponent implements OnInit, OnDestroy {
 
   onGridReady(params: GridReadyEvent) {
     this.gridApi = params.api
+    this.gridReady.emit(this.gridApi);
     this.gridApi.showLoadingOverlay();
 
     this.roomSubscriber = this._roomsService.getRoomsStream().subscribe((transaction: RowDataTransaction) => {
       this.gridApi.applyTransaction(transaction)
-      this.shareRowData.emit(this.gridApi.getRenderedNodes())
     });
     this._roomsService.getRooms();
   }

@@ -31,6 +31,7 @@ import {NgChartsModule} from "ng2-charts";
 import { GamesAnalyticsComponent } from './components/profile/games-analytics/games-analytics.component';
 import {ProfileModule} from "./components/profile/profile.module";
 import {CommonModule} from "@angular/common";
+import {NotificationServiceModule} from "./components/notification-service/notification-service.module";
 
 @NgModule({
   declarations: [
@@ -63,6 +64,7 @@ import {CommonModule} from "@angular/common";
     MatDividerModule,
     NgChartsModule,
     ProfileModule,
+    NotificationServiceModule
   ],
   providers: [CookieService, AuthorizationService, AuthGuard,
     {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true}],

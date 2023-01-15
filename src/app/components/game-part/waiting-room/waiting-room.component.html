@@ -1,7 +1,7 @@
 <div class="container">
 
   <app-rooms-grid class="rooms-grid" *ngIf="animeList.length" [animeList]="animeList"
-                  (shareRowData)="onDataChange($event)"></app-rooms-grid>
+                  (gridReady)="onGridReady($event)"></app-rooms-grid>
   <div class="aside">
 
     <div class="news-tab">

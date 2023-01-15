@@ -6,6 +6,8 @@ import {MatDialog} from "@angular/material/dialog";
 import {CreateRoomDialogComponent} from "./create-room-dialog/create-room-dialog.component";
 import {AnimeService} from "../anime.service";
 import {Anime} from "../game.models";
+import {GridApi} from "ag-grid-community";
+import {ActionNotificationServiceService} from "../../notification-service/action-notification-service.service";
 
 @Component({
   selector: 'app-waiting-room',
@@ -14,23 +16,18 @@ import {Anime} from "../game.models";
 })
 export class WaitingRoomComponent implements OnInit {
 
-  rows:any=[];
-
-  isSearching = false;
+  private _gridApi: GridApi;
   animeList: Anime[] = []
 
   constructor(private gameService: GameService,
               private router: Router,
               private _roomsService: RoomsService,
               private _animeService: AnimeService,
+              private _actionNotificationServiceService: ActionNotificationServiceService,
               public dialog: MatDialog) {
   }
 
   ngOnInit(): void {
-    this.gameService.checkSearchStatus().subscribe((data) => {
-      console.log(data);
-      this.isSearching = <boolean>data;
-    })
     this._animeService.getAnimeList().subscribe({
       next: (data) => {
         this.animeList = data;
@@ -38,30 +35,9 @@ export class WaitingRoomComponent implements OnInit {
     })
   }
 
-  startSearch() {
-    this.isSearching = true;
-    this.gameService.searchOpponent().subscribe((data) => {
-      if (this.isSearching) {
-        this.router.navigate([`/game/${data}`])
-      }
-    });
-  }
-
-  stopSearch() {
-    this.gameService.stopSearch().subscribe((data) => {
-      console.log(data);
-      this.isSearching = false;
-    })
-  }
-
-  request() {
-    console.log('here');
-    this._roomsService.getRoomsStream().subscribe(console.log);
-    this._roomsService.getRooms();
-  }
 
   createRoom() {
-    let dialogRef = this.dialog.open(CreateRoomDialogComponent, {
+    this.dialog.open(CreateRoomDialogComponent, {
       height: '400px',
       width: '600px',
     });
@@ -71,14 +47,20 @@ export class WaitingRoomComponent implements OnInit {
     this.router.navigate(["/coming-soon"])
   }
 
-  onDataChange(rowData: any) {
-    this.rows=rowData;
-    console.log("ya lox",this.rows)
+  onGridReady(gridApi: GridApi) {
+    this._gridApi = gridApi;
   }
 
   randomRoom() {
-    let id = Math.floor(Math.random() * this.rows.length);
+    const rows = this._gridApi.getRenderedNodes();
 
-    this.router.navigate([`room/${this.rows[id].id}`])
+    if (!rows.length) {
+      this._actionNotificationServiceService.createErrorMessage('Sorry, there are no available rooms now. Create your own room :=)', 'Okay');
+
+      return
+    }
+
+    let id = Math.floor(Math.random() * rows.length);
+    this.router.navigate([`room/${rows[id].id}`])
   }
 }

@@ -11,6 +11,7 @@ import {CookieService} from "./cookie.service";
 export class GameService {
 
   backendUrl = 'https://ani-game-backend.herokuapp.com'
+
   // backendUrl = "http://127.0.0.1:2012"
 
   constructor(private http: HttpClient,
@@ -19,17 +20,6 @@ export class GameService {
   ) {
   }
 
-  searchOpponent() {
-    return this.http.post(this.backendUrl + '/game/start', {});
-  }
-
-  checkSearchStatus() {
-    return this.http.get(this.backendUrl + '/game/search-status');
-  }
-
-  stopSearch() {
-    return this.http.delete(this.backendUrl + '/game/search-stop');
-  }
 
   getCards<T>(game_id: number) {
     return this.http.post<T>(this.backendUrl + `/game/${game_id}`, {})
