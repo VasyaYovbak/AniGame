@@ -4,6 +4,8 @@ import {Router} from "@angular/router";
 import {RoomsService} from "../rooms.service";
 import {MatDialog} from "@angular/material/dialog";
 import {CreateRoomDialogComponent} from "./create-room-dialog/create-room-dialog.component";
+import {AnimeService} from "../anime.service";
+import {Anime} from "../game.models";
 
 @Component({
   selector: 'app-waiting-room',
@@ -15,14 +17,24 @@ export class WaitingRoomComponent implements OnInit {
   rows:any=[];
 
   isSearching = false;
+  animeList: Anime[] = []
 
-  constructor(private gameService: GameService, private router: Router, private _roomsService: RoomsService, public dialog: MatDialog) {
+  constructor(private gameService: GameService,
+              private router: Router,
+              private _roomsService: RoomsService,
+              private _animeService: AnimeService,
+              public dialog: MatDialog) {
   }
 
   ngOnInit(): void {
     this.gameService.checkSearchStatus().subscribe((data) => {
       console.log(data);
       this.isSearching = <boolean>data;
+    })
+    this._animeService.getAnimeList().subscribe({
+      next: (data) => {
+        this.animeList = data;
+      }
     })
   }
 

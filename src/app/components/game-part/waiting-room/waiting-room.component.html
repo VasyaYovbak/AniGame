@@ -1,14 +1,9 @@
 <div class="container">
-  <!--  <button (click)="request()" *ngIf="!isSearching" class="btn">-->
-  <!--    Find Opponent-->
-  <!--  </button>-->
-  <app-rooms-grid class="rooms-grid" (shareRowData)="onDataChange($event)" ></app-rooms-grid>
+
+  <app-rooms-grid class="rooms-grid" *ngIf="animeList.length" [animeList]="animeList"
+                  (shareRowData)="onDataChange($event)"></app-rooms-grid>
   <div class="aside">
 
-    <!--    <button class="btn" (click)="createRoom()">-->
-    <!--&lt;!&ndash;      Maybe play with friends I am not sure&ndash;&gt;-->
-    <!--      Create-->
-    <!--    </button>-->
     <div class="news-tab">
       <app-events-tab></app-events-tab>
     </div>

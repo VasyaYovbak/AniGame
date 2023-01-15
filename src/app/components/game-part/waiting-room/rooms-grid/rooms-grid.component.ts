@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnDestroy, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, OnDestroy, OnInit, Output, Input} from '@angular/core';
 import {
   ColDef,
   GetRowIdFunc,
@@ -10,6 +10,7 @@ import {
 import {RoomsService} from "../../rooms.service";
 import {getColumnDefs} from "./rooms.coldef";
 import {Router} from "@angular/router";
+import {Anime} from "../../game.models";
 
 @Component({
   selector: 'app-rooms-grid',
@@ -17,6 +18,9 @@ import {Router} from "@angular/router";
   styleUrls: ['./rooms-grid.component.scss']
 })
 export class RoomsGridComponent implements OnInit, OnDestroy {
+
+  @Input()
+  animeList: Anime[]
 
   private gridApi!: GridApi;
 
@@ -42,14 +46,14 @@ export class RoomsGridComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.columnDefs = getColumnDefs();
+    this.columnDefs = getColumnDefs(this.animeList);
   }
 
   onGridReady(params: GridReadyEvent) {
     this.gridApi = params.api
+    this.gridApi.showLoadingOverlay();
 
     this.roomSubscriber = this._roomsService.getRoomsStream().subscribe((transaction: RowDataTransaction) => {
-      // console.log(transaction);
       this.gridApi.applyTransaction(transaction)
       this.shareRowData.emit(this.gridApi.getRenderedNodes())
     });
@@ -61,7 +65,6 @@ export class RoomsGridComponent implements OnInit, OnDestroy {
   }
 
   onRowClicked(e: RowClickedEvent): void {
-    console.log('RowClickedEvent', e);
     this.router.navigate([`room/${e.data.room_id}`])
   }
 

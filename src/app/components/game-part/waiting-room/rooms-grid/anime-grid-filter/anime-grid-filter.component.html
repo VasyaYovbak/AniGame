@@ -1,0 +1,5 @@
+<mat-select #animeSelect multiple [(value)]="selectedAnimeListIds" (selectionChange)="updateFilter()">
+  <mat-option *ngFor="let anime of animeList" [value]="anime.anime_id">{{anime.name}}</mat-option>
+</mat-select>
+
+
