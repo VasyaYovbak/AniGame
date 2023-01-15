@@ -1,0 +1,15 @@
+:host{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+::ng-deep{
+  .error-notification-message{
+    background: #3b3b3b;
+  }
+}
+
+.message-text{
+  width: 80%;
+}

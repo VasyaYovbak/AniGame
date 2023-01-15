@@ -39,7 +39,6 @@ export class CreateRoomDialogComponent implements OnInit {
   }
 
   createRoom() {
-    console.log(this.form.valid)
     if (this.form.valid) {
       this._roomsService.getRoomInfo<RoomEventData<{ room: GameRoom }>>().subscribe((data) => {
         this._router.navigate([`room/${data.data.room.room_id}`]);
@@ -48,7 +47,6 @@ export class CreateRoomDialogComponent implements OnInit {
 
       this.isSending = true;
       this._roomsService.createRoom(this.form.value.name, this.form.value.animeList);
-      console.log('here');
     }
   }
 
