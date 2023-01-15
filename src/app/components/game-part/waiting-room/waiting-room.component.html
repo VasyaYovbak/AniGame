@@ -1,10 +1,6 @@
 <div class="container">
-  <button (click)="request()" *ngIf="!isSearching" class="btn">
-    Find Opponent
-  </button>
+  <app-rooms-grid class="rooms-grid" *ngIf="animeList.length" [animeList]="animeList"></app-rooms-grid>
   <button class="btn" (click)="createRoom()">
     Create
   </button>
-
-  <app-rooms-grid class="rooms-grid"></app-rooms-grid>
 </div>

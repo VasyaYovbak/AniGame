@@ -1,7 +1,7 @@
 export interface Anime {
   anime_id: number,
   name: string,
-  img: string
+  image: string
 }
 
 export interface GameRoom {
